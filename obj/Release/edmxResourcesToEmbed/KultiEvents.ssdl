@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KultiEventModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="KultiEventModelStoreContainer">
+    <EntitySet Name="Events" EntityType="KultiEventModel.Store.Events" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EvTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="EvStartDate" Type="datetime" />
+    <Property Name="EvEndDate" Type="datetime" />
+    <Property Name="EvUserId" Type="int" />
+    <Property Name="EvImgPath1" Type="nvarchar" MaxLength="150" />
+    <Property Name="EvImgPath2" Type="nvarchar" MaxLength="150" />
+    <Property Name="EvLocation" Type="int" />
+    <Property Name="EvStatus" Type="int" />
+    <Property Name="EvText" Type="nvarchar(max)" />
+    <Property Name="EvAdmission" Type="nvarchar" MaxLength="50" />
+    <Property Name="EvType" Type="int" />
+    <Property Name="EvGroupId" Type="int" />
+    <Property Name="EvResponsible" Type="nvarchar" MaxLength="100" />
+    <Property Name="EvAgencyId" Type="int" />
+    <Property Name="EvInterInfo" Type="ntext" />
+    <Property Name="EvSize" Type="int" />
+  </EntityType>
+</Schema>

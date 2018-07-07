@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KultiEventModelStoreContainer" CdmEntityContainer="KultiEventsModel">
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="KultiEventModel.Events">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="EvSize" ColumnName="EvSize" />
+          <ScalarProperty Name="EvInterInfo" ColumnName="EvInterInfo" />
+          <ScalarProperty Name="EvAgencyId" ColumnName="EvAgencyId" />
+          <ScalarProperty Name="EvResponsible" ColumnName="EvResponsible" />
+          <ScalarProperty Name="EvGroupId" ColumnName="EvGroupId" />
+          <ScalarProperty Name="EvType" ColumnName="EvType" />
+          <ScalarProperty Name="EvAdmission" ColumnName="EvAdmission" />
+          <ScalarProperty Name="EvText" ColumnName="EvText" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EvTitle" ColumnName="EvTitle" />
+          <ScalarProperty Name="EvStartDate" ColumnName="EvStartDate" />
+          <ScalarProperty Name="EvEndDate" ColumnName="EvEndDate" />
+          <ScalarProperty Name="EvUserId" ColumnName="EvUserId" />
+          <ScalarProperty Name="EvImgPath1" ColumnName="EvImgPath1" />
+          <ScalarProperty Name="EvImgPath2" ColumnName="EvImgPath2" />
+          <ScalarProperty Name="EvLocation" ColumnName="EvLocation" />
+          <ScalarProperty Name="EvStatus" ColumnName="EvStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

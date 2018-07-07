@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExternalUsersModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ExternalUsersModelStoreContainer">
+    <EntitySet Name="ExternalUsers" EntityType="ExternalUsersModel.Store.ExternalUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="ExternalUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mieter" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bewohner" Type="nvarchar" MaxLength="255" />
+    <Property Name="Beiz" Type="nvarchar" MaxLength="255" />
+    <Property Name="KoKo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Halle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gewerbetrakt" Type="nvarchar" MaxLength="255" />
+    <Property Name="Giesserei" Type="nvarchar" MaxLength="255" />
+    <Property Name="Schuer" Type="nvarchar" MaxLength="255" />
+    <Property Name="Villa" Type="nvarchar" MaxLength="255" />
+    <Property Name="Wagenstrasse" Type="nvarchar" MaxLength="255" />
+    <Property Name="Veranstalter" Type="nvarchar" MaxLength="255" />
+    <Property Name="Geschaeftlich" Type="nvarchar" MaxLength="255" />
+    <Property Name="Verwaltung" Type="nvarchar" MaxLength="255" />
+    <Property Name="Stiftung" Type="nvarchar" MaxLength="255" />
+    <Property Name="Prot_Traeve" Type="nvarchar" MaxLength="255" />
+    <Property Name="Prot_Koko" Type="nvarchar" MaxLength="255" />
+    <Property Name="Prot_Halle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Prot_Beiz" Type="nvarchar" MaxLength="255" />
+    <Property Name="Ehemalige" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sonstige" Type="nvarchar" MaxLength="255" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+</Schema>

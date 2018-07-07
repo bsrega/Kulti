@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExternalUsersModelStoreContainer" CdmEntityContainer="ExternalUsersEntities">
+    <EntitySetMapping Name="ExternalUsers">
+      <EntityTypeMapping TypeName="ExternalUsersModel.ExternalUsers">
+        <MappingFragment StoreEntitySet="ExternalUsers">
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="Mieter" ColumnName="Mieter" />
+          <ScalarProperty Name="Bewohner" ColumnName="Bewohner" />
+          <ScalarProperty Name="Beiz" ColumnName="Beiz" />
+          <ScalarProperty Name="KoKo" ColumnName="KoKo" />
+          <ScalarProperty Name="Halle" ColumnName="Halle" />
+          <ScalarProperty Name="Gewerbetrakt" ColumnName="Gewerbetrakt" />
+          <ScalarProperty Name="Giesserei" ColumnName="Giesserei" />
+          <ScalarProperty Name="Schuer" ColumnName="Schuer" />
+          <ScalarProperty Name="Villa" ColumnName="Villa" />
+          <ScalarProperty Name="Wagenstrasse" ColumnName="Wagenstrasse" />
+          <ScalarProperty Name="Veranstalter" ColumnName="Veranstalter" />
+          <ScalarProperty Name="Geschaeftlich" ColumnName="Geschaeftlich" />
+          <ScalarProperty Name="Verwaltung" ColumnName="Verwaltung" />
+          <ScalarProperty Name="Stiftung" ColumnName="Stiftung" />
+          <ScalarProperty Name="Prot_Traeve" ColumnName="Prot_Traeve" />
+          <ScalarProperty Name="Prot_Koko" ColumnName="Prot_Koko" />
+          <ScalarProperty Name="Prot_Halle" ColumnName="Prot_Halle" />
+          <ScalarProperty Name="Prot_Beiz" ColumnName="Prot_Beiz" />
+          <ScalarProperty Name="Ehemalige" ColumnName="Ehemalige" />
+          <ScalarProperty Name="Sonstige" ColumnName="Sonstige" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

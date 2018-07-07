@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExternalUsersModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ExternalUsersEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="ExternalUsers" EntityType="ExternalUsersModel.ExternalUsers" />
+  </EntityContainer>
+  <EntityType Name="ExternalUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="LastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Mieter" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Bewohner" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Beiz" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="KoKo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Halle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Gewerbetrakt" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Giesserei" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Schuer" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Villa" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Wagenstrasse" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Veranstalter" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Geschaeftlich" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Verwaltung" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Stiftung" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Prot_Traeve" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Prot_Koko" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Prot_Halle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Prot_Beiz" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Ehemalige" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Sonstige" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+  </EntityType>
+</Schema>

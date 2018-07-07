@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgencyModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="AgenciesEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Agencies" EntityType="AgencyModel.Agencies" />
+  </EntityContainer>
+  <EntityType Name="Agencies">
+    <Key>
+      <PropertyRef Name="AgencyId" />
+    </Key>
+    <Property Name="AgencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="AgenyGroupId" Type="Int32" />
+    <Property Name="AgencyName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AgencyEmail" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AgencyPhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AgencyStreet" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AgencyZip" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="AgencyCity" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ContactFirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContactLastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ContactPhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>
