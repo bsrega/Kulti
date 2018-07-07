@@ -1,0 +1,138 @@
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Mvc4_Kulti.dll.config
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Mvc4_Kulti.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Mvc4_Kulti.pdb
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Antlr3.Runtime.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.Core.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\EntityFramework.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\EntityFramework.SqlServer.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\MvcCheckBoxList.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Newtonsoft.Json.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Data.Entity.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Net.Http.Extensions.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Net.Http.Formatting.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Net.Http.Primitives.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Abstractions.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Helpers.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Http.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Http.WebHost.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Mvc.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Optimization.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Razor.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Routing.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.WebPages.Deployment.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.WebPages.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.WebPages.Razor.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\WebGrease.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\WebMatrix.Data.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\WebMatrix.WebData.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Mono.Math.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Antlr3.Runtime.pdb
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.Core.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\EntityFramework.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\EntityFramework.SqlServer.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Newtonsoft.Json.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Net.Http.Extensions.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Net.Http.Formatting.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Net.Http.Primitives.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Helpers.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Http.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Http.WebHost.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Mvc.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Optimization.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.Razor.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.WebPages.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.WebPages.Deployment.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\System.Web.WebPages.Razor.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\WebMatrix.Data.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\WebMatrix.WebData.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\bin\Mono.Math.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\obj\Debug\KultiHosting.csproj.App.config
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\obj\Debug\Mvc4_Kulti.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\obj\Debug\Mvc4_Kulti.pdb
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting\obj\Debug\KultiHosting.csprojResolveAssemblyReference.cache
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Mvc4_Kulti.dll.config
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Mvc4_Kulti.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Mvc4_Kulti.pdb
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Antlr3.Runtime.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.Core.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\EntityFramework.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\EntityFramework.SqlServer.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\MvcCheckBoxList.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Newtonsoft.Json.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Data.Entity.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Net.Http.Extensions.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Net.Http.Formatting.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Net.Http.Primitives.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Abstractions.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Helpers.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Http.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Http.WebHost.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Mvc.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Optimization.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Razor.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Routing.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.WebPages.Deployment.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.WebPages.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.WebPages.Razor.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\WebGrease.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\WebMatrix.Data.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\WebMatrix.WebData.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Mono.Math.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Antlr3.Runtime.pdb
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.Core.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\EntityFramework.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\EntityFramework.SqlServer.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Newtonsoft.Json.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Net.Http.Extensions.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Net.Http.Formatting.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Net.Http.Primitives.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Helpers.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Http.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Http.WebHost.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Mvc.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Optimization.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.Razor.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.WebPages.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.WebPages.Deployment.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\System.Web.WebPages.Razor.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\WebMatrix.Data.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\WebMatrix.WebData.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\bin\Mono.Math.xml
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\obj\Debug\KultiHosting.csproj.App.config
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\obj\Debug\KultiHosting.csprojAssemblyReference.cache
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\obj\Debug\KultiHosting.csproj.CoreCompileInputs.cache
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\obj\Debug\KultiHosting.csproj.CopyComplete
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\obj\Debug\Mvc4_Kulti.dll
+C:\Users\steph\Desktop\Dev\Projects\Kulti\Hosting - Kopie\obj\Debug\Mvc4_Kulti.pdb

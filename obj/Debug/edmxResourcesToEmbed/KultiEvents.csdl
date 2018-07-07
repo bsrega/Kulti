@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KultiEventModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="KultiEventsModel" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Events" EntityType="KultiEventModel.Events" />
+  </EntityContainer>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="EvTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EvStartDate" Type="DateTime" />
+    <Property Name="EvEndDate" Type="DateTime" />
+    <Property Name="EvUserId" Type="Int32" />
+    <Property Name="EvImgPath1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EvImgPath2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EvLocation" Type="Int32" />
+    <Property Name="EvStatus" Type="Int32" />
+    <Property Type="String" Name="EvText" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EvAdmission" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="EvType" />
+    <Property Type="Int32" Name="EvGroupId" />
+    <Property Type="String" Name="EvResponsible" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="EvAgencyId" />
+    <Property Type="String" Name="EvInterInfo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="EvSize" />
+  </EntityType>
+</Schema>

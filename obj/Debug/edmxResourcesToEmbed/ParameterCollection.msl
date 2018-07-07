@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ParamCollectionModelStoreContainer" CdmEntityContainer="ParamColEntities">
+    <EntitySetMapping Name="ParamCollection">
+      <EntityTypeMapping TypeName="ParamCollectionModel.ParamCollection">
+        <MappingFragment StoreEntitySet="ParamCollection">
+          <ScalarProperty Name="EnumValue" ColumnName="EnumValue" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

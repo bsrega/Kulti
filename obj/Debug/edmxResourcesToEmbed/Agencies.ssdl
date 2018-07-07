@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgencyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AgencyModelStoreContainer">
+    <EntitySet Name="Agencies" EntityType="AgencyModel.Store.Agencies" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="Agencies">
+    <Key>
+      <PropertyRef Name="AgencyId" />
+    </Key>
+    <Property Name="AgencyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AgenyGroupId" Type="int" />
+    <Property Name="AgencyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgencyEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgencyPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgencyStreet" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgencyZip" Type="nvarchar" MaxLength="20" />
+    <Property Name="AgencyCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

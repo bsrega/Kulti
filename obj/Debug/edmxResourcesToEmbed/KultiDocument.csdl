@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DocumentModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="KultiDocumentEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Documents" EntityType="DocumentModel.Documents" />
+  </EntityContainer>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DocId" />
+    </Key>
+    <Property Name="DocId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="PublishDate" Type="DateTime" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="FilePath" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="EventId" />
+    <Property Type="String" Name="FileExtension" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="GroupId" />
+    <Property Type="Boolean" Name="isPublic" />
+  </EntityType>
+</Schema>

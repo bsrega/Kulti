@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DocumentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DocumentModelStoreContainer">
+    <EntitySet Name="Documents" EntityType="DocumentModel.Store.Documents" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DocId" />
+    </Key>
+    <Property Name="DocId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="EventId" Type="int" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="150" />
+    <Property Name="FileExtension" Type="nvarchar" MaxLength="8" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="isPublic" Type="bit" />
+  </EntityType>
+</Schema>
