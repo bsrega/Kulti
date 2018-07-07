@@ -1,0 +1,2012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82CB4BDD-7E6C-4D53-B240-2134743BFA1B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mvc4_Kulti</RootNamespace>
+    <AssemblyName>Mvc4_Kulti</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>&lt;Objects&gt;&lt;ObjectGroup Name="DefaultConnection-Deployment" Order="1"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bUser Instance=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaAndData.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="BlogEntities-Deployment" Order="2"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\BlogEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="KultiDocumentEntities-Deployment" Order="3"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\KultiDocumentEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="KultiEventsModel-Deployment" Order="4"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\KultiEventsModel-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="ForumEntities-Deployment" Order="5"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\ForumEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="ParamColEntities-Deployment" Order="6"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\ParamColEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="BlacklistEntities-Deployment" Order="7"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\BlacklistEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;/Objects&gt;</PublishDatabaseSettings>
+    <PublishDatabases>false</PublishDatabases>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>&lt;Objects&gt;&lt;ObjectGroup Name="DefaultConnection-Deployment" Order="1"&gt;&lt;Destination Path="Data Source=.\SQLEXPRESS%3bIntegrated Security=SSPI%3bAttachDBFilename=|DataDirectory|kulti.mdf%3bUser Instance=True" /&gt;&lt;Object Type="DbFullSql" Enabled="False"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bUser Instance=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\DefaultConnection-Deployment_SchemaAndData.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="BlogEntities-Deployment" Order="2"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\BlogEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="KultiDocumentEntities-Deployment" Order="3"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\KultiDocumentEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="KultiEventsModel-Deployment" Order="4"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\KultiEventsModel-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="ForumEntities-Deployment" Order="5"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\ForumEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="ParamColEntities-Deployment" Order="6"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\ParamColEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="BlacklistEntities-Deployment" Order="7"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=&amp;quot%3bC:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\aspnet-Mvc4_Kulti-20130325085546.mdf&amp;quot%3b%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Release\AutoScripts\BlacklistEntities-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;/Objects&gt;</PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PublishDatabases>false</PublishDatabases>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.AspNet.4.3.4.13329\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core.UI">
+      <HintPath>..\packages\DotNetOpenAuth.Core.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.InfoCard">
+      <HintPath>..\packages\DotNetOpenAuth.InfoCard.4.3.1.13153\lib\net40-full\DotNetOpenAuth.InfoCard.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.InfoCard.UI">
+      <HintPath>..\packages\DotNetOpenAuth.InfoCard.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.InfoCard.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.OAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Common">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Common.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.OAuth.Consumer.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.ServiceProvider">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.ServiceProvider.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth.ServiceProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Core.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.AuthorizationServer">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.AuthorizationServer.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.AuthorizationServer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.Client">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Client.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.Client.UI">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Client.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.Client.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.ClientAuthorization">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.ClientAuthorization.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.ClientAuthorization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.ResourceServer">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.ResourceServer.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.ResourceServer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.OpenId.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.Provider">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Provider.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OpenId.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.Provider.UI">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Provider.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OpenId.Provider.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty.UI">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.UI">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OpenId.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenIdInfoCard.UI">
+      <HintPath>..\packages\DotNetOpenAuth.OpenIdInfoCard.UI.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OpenIdInfoCard.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenIdOAuth">
+      <HintPath>..\packages\DotNetOpenAuth.OpenIdOAuth.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OpenIdOAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="EmadOmar.OfficeToText, Version=1.0.2394.39129, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EmadOmar.OfficeToText.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.OAuth.3.2.3\lib\net45\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcCheckBoxList, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MvcCheckBoxList.1.4.5\lib\net45\MvcCheckBoxList.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agencies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Agencies.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Blacklist.Designer.cs">
+      <DependentUpon>Blacklist.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgencyController.cs" />
+    <Compile Include="Controllers\BlacklistController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExternalUsersController.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KultiEventsController.cs" />
+    <Compile Include="Controllers\LuceneController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Controllers\ParamCollectionController.cs" />
+    <Compile Include="Controllers\ViewSwitcherController.cs" />
+    <Compile Include="ExternalUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalUsers.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Forum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Forum.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="KultiBlog.Designer.cs">
+      <DependentUpon>KultiBlog.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="KultiDocument.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KultiDocument.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KultiEvents.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KultiEvents.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LuceneService\Lucene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="ParameterCollection.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParameterCollection.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\EventViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\HelpersViewModel.cs" />
+    <Compile Include="ViewModels\BlacklistViewModel.cs" />
+    <Compile Include="ViewModels\GroupViewModel.cs" />
+    <Compile Include="ViewModels\ManageUserRolesViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Cal\fullcalendar.css" />
+    <Content Include="Content\Cal\fullcalendar.print.css" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\anchor.gif" />
+    <Content Include="Content\images\event.png" />
+    <Content Include="Content\images\docs.png" />
+    <Content Include="Content\images\icons-18-black.png" />
+    <Content Include="Content\images\icons-18-white.png" />
+    <Content Include="Content\images\icons-36-black.png" />
+    <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\icons-png\action-black.png" />
+    <Content Include="Content\images\icons-png\action-white.png" />
+    <Content Include="Content\images\icons-png\alert-black.png" />
+    <Content Include="Content\images\icons-png\alert-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-white.png" />
+    <Content Include="Content\images\icons-png\arrow-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-white.png" />
+    <Content Include="Content\images\icons-png\audio-black.png" />
+    <Content Include="Content\images\icons-png\audio-white.png" />
+    <Content Include="Content\images\icons-png\back-black.png" />
+    <Content Include="Content\images\icons-png\back-white.png" />
+    <Content Include="Content\images\icons-png\bars-black.png" />
+    <Content Include="Content\images\icons-png\bars-white.png" />
+    <Content Include="Content\images\icons-png\bullets-black.png" />
+    <Content Include="Content\images\icons-png\bullets-white.png" />
+    <Content Include="Content\images\icons-png\calendar-black.png" />
+    <Content Include="Content\images\icons-png\calendar-white.png" />
+    <Content Include="Content\images\icons-png\camera-black.png" />
+    <Content Include="Content\images\icons-png\camera-white.png" />
+    <Content Include="Content\images\icons-png\carat-d-black.png" />
+    <Content Include="Content\images\icons-png\carat-d-white.png" />
+    <Content Include="Content\images\icons-png\carat-l-black.png" />
+    <Content Include="Content\images\icons-png\carat-l-white.png" />
+    <Content Include="Content\images\icons-png\carat-r-black.png" />
+    <Content Include="Content\images\icons-png\carat-r-white.png" />
+    <Content Include="Content\images\icons-png\carat-u-black.png" />
+    <Content Include="Content\images\icons-png\carat-u-white.png" />
+    <Content Include="Content\images\icons-png\check-black.png" />
+    <Content Include="Content\images\icons-png\check-white.png" />
+    <Content Include="Content\images\icons-png\clock-black.png" />
+    <Content Include="Content\images\icons-png\clock-white.png" />
+    <Content Include="Content\images\icons-png\cloud-black.png" />
+    <Content Include="Content\images\icons-png\cloud-white.png" />
+    <Content Include="Content\images\icons-png\comment-black.png" />
+    <Content Include="Content\images\icons-png\comment-white.png" />
+    <Content Include="Content\images\icons-png\delete-black.png" />
+    <Content Include="Content\images\icons-png\delete-white.png" />
+    <Content Include="Content\images\icons-png\edit-black.png" />
+    <Content Include="Content\images\icons-png\edit-white.png" />
+    <Content Include="Content\images\icons-png\eye-black.png" />
+    <Content Include="Content\images\icons-png\eye-white.png" />
+    <Content Include="Content\images\icons-png\forbidden-black.png" />
+    <Content Include="Content\images\icons-png\forbidden-white.png" />
+    <Content Include="Content\images\icons-png\forward-black.png" />
+    <Content Include="Content\images\icons-png\forward-white.png" />
+    <Content Include="Content\images\icons-png\gear-black.png" />
+    <Content Include="Content\images\icons-png\gear-white.png" />
+    <Content Include="Content\images\icons-png\grid-black.png" />
+    <Content Include="Content\images\icons-png\grid-white.png" />
+    <Content Include="Content\images\icons-png\heart-black.png" />
+    <Content Include="Content\images\icons-png\heart-white.png" />
+    <Content Include="Content\images\icons-png\home-black.png" />
+    <Content Include="Content\images\icons-png\home-white.png" />
+    <Content Include="Content\images\icons-png\info-black.png" />
+    <Content Include="Content\images\icons-png\info-white.png" />
+    <Content Include="Content\images\icons-png\location-black.png" />
+    <Content Include="Content\images\icons-png\location-white.png" />
+    <Content Include="Content\images\icons-png\lock-black.png" />
+    <Content Include="Content\images\icons-png\lock-white.png" />
+    <Content Include="Content\images\icons-png\mail-black.png" />
+    <Content Include="Content\images\icons-png\mail-white.png" />
+    <Content Include="Content\images\icons-png\minus-black.png" />
+    <Content Include="Content\images\icons-png\minus-white.png" />
+    <Content Include="Content\images\icons-png\navigation-black.png" />
+    <Content Include="Content\images\icons-png\navigation-white.png" />
+    <Content Include="Content\images\icons-png\phone-black.png" />
+    <Content Include="Content\images\icons-png\phone-white.png" />
+    <Content Include="Content\images\icons-png\plus-black.png" />
+    <Content Include="Content\images\icons-png\plus-white.png" />
+    <Content Include="Content\images\icons-png\power-black.png" />
+    <Content Include="Content\images\icons-png\power-white.png" />
+    <Content Include="Content\images\icons-png\recycle-black.png" />
+    <Content Include="Content\images\icons-png\recycle-white.png" />
+    <Content Include="Content\images\icons-png\refresh-black.png" />
+    <Content Include="Content\images\icons-png\refresh-white.png" />
+    <Content Include="Content\images\icons-png\search-black.png" />
+    <Content Include="Content\images\icons-png\search-white.png" />
+    <Content Include="Content\images\icons-png\shop-black.png" />
+    <Content Include="Content\images\icons-png\shop-white.png" />
+    <Content Include="Content\images\icons-png\star-black.png" />
+    <Content Include="Content\images\icons-png\star-white.png" />
+    <Content Include="Content\images\icons-png\tag-black.png" />
+    <Content Include="Content\images\icons-png\tag-white.png" />
+    <Content Include="Content\images\icons-png\user-black.png" />
+    <Content Include="Content\images\icons-png\user-white.png" />
+    <Content Include="Content\images\icons-png\video-black.png" />
+    <Content Include="Content\images\icons-png\video-white.png" />
+    <Content Include="Content\images\icons-svg\action-black.svg" />
+    <Content Include="Content\images\icons-svg\action-white.svg" />
+    <Content Include="Content\images\icons-svg\alert-black.svg" />
+    <Content Include="Content\images\icons-svg\alert-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Content\images\icons-svg\audio-black.svg" />
+    <Content Include="Content\images\icons-svg\audio-white.svg" />
+    <Content Include="Content\images\icons-svg\back-black.svg" />
+    <Content Include="Content\images\icons-svg\back-white.svg" />
+    <Content Include="Content\images\icons-svg\bars-black.svg" />
+    <Content Include="Content\images\icons-svg\bars-white.svg" />
+    <Content Include="Content\images\icons-svg\bullets-black.svg" />
+    <Content Include="Content\images\icons-svg\bullets-white.svg" />
+    <Content Include="Content\images\icons-svg\calendar-black.svg" />
+    <Content Include="Content\images\icons-svg\calendar-white.svg" />
+    <Content Include="Content\images\icons-svg\camera-black.svg" />
+    <Content Include="Content\images\icons-svg\camera-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Content\images\icons-svg\check-black.svg" />
+    <Content Include="Content\images\icons-svg\check-white.svg" />
+    <Content Include="Content\images\icons-svg\clock-black.svg" />
+    <Content Include="Content\images\icons-svg\clock-white.svg" />
+    <Content Include="Content\images\icons-svg\cloud-black.svg" />
+    <Content Include="Content\images\icons-svg\cloud-white.svg" />
+    <Content Include="Content\images\icons-svg\comment-black.svg" />
+    <Content Include="Content\images\icons-svg\comment-white.svg" />
+    <Content Include="Content\images\icons-svg\delete-black.svg" />
+    <Content Include="Content\images\icons-svg\delete-white.svg" />
+    <Content Include="Content\images\icons-svg\edit-black.svg" />
+    <Content Include="Content\images\icons-svg\edit-white.svg" />
+    <Content Include="Content\images\icons-svg\eye-black.svg" />
+    <Content Include="Content\images\icons-svg\eye-white.svg" />
+    <Content Include="Content\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Content\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Content\images\icons-svg\forward-black.svg" />
+    <Content Include="Content\images\icons-svg\forward-white.svg" />
+    <Content Include="Content\images\icons-svg\gear-black.svg" />
+    <Content Include="Content\images\icons-svg\gear-white.svg" />
+    <Content Include="Content\images\icons-svg\grid-black.svg" />
+    <Content Include="Content\images\icons-svg\grid-white.svg" />
+    <Content Include="Content\images\icons-svg\heart-black.svg" />
+    <Content Include="Content\images\icons-svg\heart-white.svg" />
+    <Content Include="Content\images\icons-svg\home-black.svg" />
+    <Content Include="Content\images\icons-svg\home-white.svg" />
+    <Content Include="Content\images\icons-svg\info-black.svg" />
+    <Content Include="Content\images\icons-svg\info-white.svg" />
+    <Content Include="Content\images\icons-svg\location-black.svg" />
+    <Content Include="Content\images\icons-svg\location-white.svg" />
+    <Content Include="Content\images\icons-svg\lock-black.svg" />
+    <Content Include="Content\images\icons-svg\lock-white.svg" />
+    <Content Include="Content\images\icons-svg\mail-black.svg" />
+    <Content Include="Content\images\icons-svg\mail-white.svg" />
+    <Content Include="Content\images\icons-svg\minus-black.svg" />
+    <Content Include="Content\images\icons-svg\minus-white.svg" />
+    <Content Include="Content\images\icons-svg\navigation-black.svg" />
+    <Content Include="Content\images\icons-svg\navigation-white.svg" />
+    <Content Include="Content\images\icons-svg\phone-black.svg" />
+    <Content Include="Content\images\icons-svg\phone-white.svg" />
+    <Content Include="Content\images\icons-svg\plus-black.svg" />
+    <Content Include="Content\images\icons-svg\plus-white.svg" />
+    <Content Include="Content\images\icons-svg\power-black.svg" />
+    <Content Include="Content\images\icons-svg\power-white.svg" />
+    <Content Include="Content\images\icons-svg\recycle-black.svg" />
+    <Content Include="Content\images\icons-svg\recycle-white.svg" />
+    <Content Include="Content\images\icons-svg\refresh-black.svg" />
+    <Content Include="Content\images\icons-svg\refresh-white.svg" />
+    <Content Include="Content\images\icons-svg\search-black.svg" />
+    <Content Include="Content\images\icons-svg\search-white.svg" />
+    <Content Include="Content\images\icons-svg\shop-black.svg" />
+    <Content Include="Content\images\icons-svg\shop-white.svg" />
+    <Content Include="Content\images\icons-svg\star-black.svg" />
+    <Content Include="Content\images\icons-svg\star-white.svg" />
+    <Content Include="Content\images\icons-svg\tag-black.svg" />
+    <Content Include="Content\images\icons-svg\tag-white.svg" />
+    <Content Include="Content\images\icons-svg\user-black.svg" />
+    <Content Include="Content\images\icons-svg\user-white.svg" />
+    <Content Include="Content\images\icons-svg\video-black.svg" />
+    <Content Include="Content\images\icons-svg\video-white.svg" />
+    <Content Include="Content\images\joomla.png" />
+    <Content Include="Content\images\mail.png" />
+    <Content Include="Content\images\news.png" />
+    <Content Include="Content\images\agency.png" />
+    <Content Include="Content\images\blacklist.png" />
+    <Content Include="Content\images\forum.png" />
+    <Content Include="Content\jquery-ui-timepicker-addon.css" />
+    <Content Include="Content\jquery.mobile-1.4.5.css" />
+    <Content Include="Content\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.external-png-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.external-png-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.icons-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.icons-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.inline-png-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.inline-png-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.inline-svg-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.structure-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.theme-1.4.5.min.css" />
+    <Content Include="Content\Site.Mobile.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\themes\jquery-1.9.1.min.js" />
+    <Content Include="Content\themes\jquery.tablesorter.min.js" />
+    <Content Include="Groups\Gewerbe\Atelier 205\content.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 205\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 205\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 205\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 208\content.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 208\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 208\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 208\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 228\content.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 228\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 228\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 228\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 304\content.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 304\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 304\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 304\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 322\content.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 322\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 322\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 322\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 323\content.txt" />
+    <Content Include="Groups\Gewerbe\Atelier 323\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 323\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Atelier 323\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 301_302\content.txt" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 301_302\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 301_302\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 301_302\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 422_423\content.txt" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 422_423\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 422_423\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Gewerberaum 422_423\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 209\content.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 209\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 209\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 209\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 211\content.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 211\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 211\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 211\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 212\content.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 212\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 212\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 212\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 213\content.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 213\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 213\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 213\shortText.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 214\content.txt" />
+    <Content Include="Groups\Gewerbe\Musikraum 214\logo.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 214\logoSmall.jpg" />
+    <Content Include="Groups\Gewerbe\Musikraum 214\shortText.txt" />
+    <Content Include="Groups\Kultur\Beiz\content.txt" />
+    <Content Include="Groups\Kultur\Beiz\logo.jpg" />
+    <Content Include="Groups\Kultur\Beiz\logoSmall.jpg" />
+    <Content Include="Groups\Kultur\Beiz\shortText.txt" />
+    <Content Include="Groups\Kultur\Boulodrom\content.txt" />
+    <Content Include="Groups\Kultur\Boulodrom\logo.jpg" />
+    <Content Include="Groups\Kultur\Boulodrom\logoSmall.jpg" />
+    <Content Include="Groups\Kultur\Boulodrom\shortText.txt" />
+    <Content Include="Groups\Kultur\EKG\content.txt" />
+    <Content Include="Groups\Kultur\EKG\logo.jpg" />
+    <Content Include="Groups\Kultur\EKG\logosmall.jpg" />
+    <Content Include="Groups\Kultur\EKG\shortText.txt" />
+    <Content Include="Groups\Kultur\Koko\content.txt" />
+    <Content Include="Groups\Kultur\Koko\logo.jpg" />
+    <Content Include="Groups\Kultur\Koko\logosmall.jpg" />
+    <Content Include="Groups\Kultur\Koko\shortText.txt" />
+    <Content Include="Groups\Kultur\Kultihalle\content.txt" />
+    <Content Include="Groups\Kultur\Kultihalle\logo.jpg" />
+    <Content Include="Groups\Kultur\Kultihalle\logoSmall.jpg" />
+    <Content Include="Groups\Kultur\Kultihalle\shortText.txt" />
+    <Content Include="Groups\Nostalgie\2012\Video\New Text Document.txt" />
+    <Content Include="Groups\Nostalgie\2013\Sound\New Text Document.txt" />
+    <Content Include="Groups\Nostalgie\2015\Newf\08g.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Newf\10g.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Newf\12g.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Newf\info.txt" />
+    <Content Include="Groups\Nostalgie\2015\Newf\Things Aren%27t Going So Well.mp3" />
+    <Content Include="Groups\Nostalgie\2015\Newf\ThinKopie.mp3" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.html" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.js" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.swf" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mobile_b.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mobile_d.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mobile_f.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mobile_l.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mobile_r.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mobile_u.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l1\01\l1_u_01_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\01\l2_u_01_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\01\l2_u_01_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\01\l2_u_01_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\02\l2_u_02_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\02\l2_u_02_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\02\l2_u_02_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\03\l2_u_03_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\03\l2_u_03_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l2\03\l2_u_03_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\01\l3_u_01_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\01\l3_u_01_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\01\l3_u_01_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\01\l3_u_01_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\01\l3_u_01_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\02\l3_u_02_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\02\l3_u_02_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\02\l3_u_02_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\02\l3_u_02_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\02\l3_u_02_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\03\l3_u_03_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\03\l3_u_03_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\03\l3_u_03_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\03\l3_u_03_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\03\l3_u_03_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\04\l3_u_04_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\04\l3_u_04_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\04\l3_u_04_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\04\l3_u_04_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\04\l3_u_04_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\05\l3_u_05_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\05\l3_u_05_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\05\l3_u_05_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\05\l3_u_05_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l3\05\l3_u_05_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\01\l4_u_01_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\02\l4_u_02_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\03\l4_u_03_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\04\l4_u_04_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\05\l4_u_05_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\06\l4_u_06_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\07\l4_u_07_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\08\l4_u_08_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_01.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_02.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_03.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_04.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_05.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_06.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_07.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_08.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\mres_u\l4\09\l4_u_09_09.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.tiles\preview.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\pano.xml" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\skin\buttons-2.png" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\skin\defaultskin.xml" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\skin\drag-cursors-2.png" />
+    <Content Include="Groups\Nostalgie\2015\Panorama\skin\qtvr-cursors.png" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\08g.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\10g.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\12g.jpg" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\info.txt" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\Things Aren%27t Going So Well.mp3" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\ThinKopie.mp3" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Images\asc.gif" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\kulti\briaskThumb_aussen01.jpg" />
+    <Content Include="Images\kulti\briaskThumb_aussen02.jpg" />
+    <Content Include="Images\kulti\briaskThumb_aussen03.jpg" />
+    <Content Include="Images\kulti\briaskThumb_aussen04.jpg" />
+    <Content Include="Images\desc.gif" />
+    <Content Include="Content\jquery.treeview.css" />
+    <Content Include="Images\kulti\briaskThumb_aussen05.jpg" />
+    <Content Include="Images\kulti\briaskThumb_aussen06.jpg" />
+    <Content Include="Images\kulti\briaskThumb_aussen07.jpg" />
+    <Content Include="Images\kulti\briaskThumb_beiz.jpg" />
+    <Content Include="Images\kulti\briaskThumb_bild.jpg" />
+    <Content Include="Images\kulti\briaskThumb_ekg.jpg" />
+    <Content Include="Images\kulti\briaskThumb_foyer.jpg" />
+    <Content Include="Images\kulti\briaskThumb_koko.jpg" />
+    <Content Include="Images\kulti\briaskThumb_kultihalle.jpg" />
+    <Content Include="Images\kulti\briaskThumb_kulti_neubau.jpg" />
+    <Content Include="Images\kulti\briaskThumb_weiher.jpg" />
+    <Content Include="Images\kulti_logo_transparent.png" />
+    <Content Include="Images\maximize.gif" />
+    <Content Include="Images\minimize.gif" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\TableSort\asc.gif" />
+    <Content Include="Images\TableSort\bg.gif" />
+    <Content Include="Images\TableSort\desc.gif" />
+    <Content Include="Images\TableSort\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\adapters\jquery.js" />
+    <Content Include="Scripts\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\ckeditor\config.js" />
+    <Content Include="Scripts\ckeditor\contents.css" />
+    <Content Include="Scripts\ckeditor\lang\af.js" />
+    <Content Include="Scripts\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\lang\da.js" />
+    <Content Include="Scripts\ckeditor\lang\de.js" />
+    <Content Include="Scripts\ckeditor\lang\el.js" />
+    <Content Include="Scripts\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\lang\en.js" />
+    <Content Include="Scripts\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\lang\es.js" />
+    <Content Include="Scripts\ckeditor\lang\et.js" />
+    <Content Include="Scripts\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\lang\he.js" />
+    <Content Include="Scripts\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\lang\id.js" />
+    <Content Include="Scripts\ckeditor\lang\is.js" />
+    <Content Include="Scripts\ckeditor\lang\it.js" />
+    <Content Include="Scripts\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\ckeditor\lang\km.js" />
+    <Content Include="Scripts\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\lang\no.js" />
+    <Content Include="Scripts\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\lang\si.js" />
+    <Content Include="Scripts\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\lang\th.js" />
+    <Content Include="Scripts\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Scripts\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Scripts\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Scripts\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Scripts\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Scripts\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Scripts\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Scripts\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Scripts\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\spinner.gif" />
+    <Content Include="Scripts\ckeditor\styles.js" />
+    <Content Include="Scripts\fancybox\blank.gif" />
+    <Content Include="Scripts\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Scripts\fancybox\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Scripts\fancybox\fancybox_sprite.png" />
+    <Content Include="Scripts\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.css" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\fullcalendar\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar\gcal.js" />
+    <Content Include="Groups\Kultur\Kultihalle\kultihalle_50_50_deal_2011.pdf" />
+    <Content Include="Groups\Kultur\Kultihalle\kultihalle_statuten_gendert_apr_2013.pdf" />
+    <Content Include="Groups\Kultur\Kultihalle\Kulti_Hallenmiete_Tarif_2011.pdf" />
+    <Content Include="Groups\Kultur\Kultihalle\pa-rider_kultihalle_13-07.pdf" />
+    <Content Include="Groups\Kultur\Kultihalle\pa-vermietungs-preisliste_kultihalle_13-07.pdf" />
+    <Content Include="Groups\Nostalgie\2015\Newf\infoll.tkk" />
+    <Content Include="Groups\Nostalgie\2015\Newf\PlugIn-Jam 15-10 Videos.pdf" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\infoll.tkk" />
+    <Content Include="Groups\Nostalgie\2015\Plder2\PlugIn-Jam 15-10 Videos.pdf" />
+    <Content Include="Groups\Nostalgie\Publikationen\blinker\b01_blinker-januar.pdf" />
+    <Content Include="Groups\Nostalgie\Publikationen\blinker\b02_blinker-februar.pdf" />
+    <Content Include="Groups\Nostalgie\Publikationen\blinker\b03_blinker-maerz.pdf" />
+    <Content Include="Groups\Nostalgie\Publikationen\blinker\b04_blinker-april.pdf" />
+    <Content Include="Groups\Nostalgie\Schnellzugriff - Verknüpfung.lnk" />
+    <Content Include="Groups\Protokolle\2007\11\K07-03_Sitzungsprotokoll+KoKo+2007_03.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-04_Sitzungsprotokoll+KoKo+2007_04.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-05_Sitzungsprotokoll+KoKo+2007_05.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-06_Sitzungsprotokoll+KoKo+2007_06.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-08B_Protokoll.rtf" />
+    <Content Include="Groups\Protokolle\2007\11\K07-08_Sitzungsprotokoll+KoKo+2007_08.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-09_Sitzungsprotokoll+KoKo+2007_09.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-10_Sitzungsprotokoll+KoKo+2007_10.doc" />
+    <Content Include="Groups\Protokolle\2007\11\K07-11_Sitzungsprotokoll+KoKo+2007_11.doc" />
+    <Content Include="Groups\Protokolle\2007\11\KMV07-1_Koko-MVProtokoll.doc" />
+    <Content Include="Groups\Protokolle\2007\12\VV07-1_12.3.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\12\VV07-2_25.6.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\12\VV07-3_24.9.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\12\VV07-4_10.12.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\12\VVE07-1_12.3.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\12\VVE07-2_25.6.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\12\VVE07-3_24.9.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\12\VVE07-4_10.12.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\G01-E26[1].7.2007-Geländesitzung.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\Mietkonditionen Beiz.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\mittteilung+22[1].11.07.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-01_30.1.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-02_27.2.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-03_27.3.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-04_24.4.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-05_29.5.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-07_10.7.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-08_28.8.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-09_25.9.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-10_30.10.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\33\V07-11_26.11.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\8\H07-01_10.01.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-02_14.2.2007.pdf" />
+    <Content Include="Groups\Protokolle\2007\8\H07-04B_25.4.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-04_11.4.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-05A_9.5.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-05B_23.5.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-06_14.6.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-07_11.7.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\H07-08_08.8.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\Q07-08_22.8.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\Q07-09_12.9.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\Q07-10_10.10.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\Q07-11_14.11.2007.doc" />
+    <Content Include="Groups\Protokolle\2007\8\Q07-12_12.12.2007.doc" />
+    <Content Include="Groups\Protokolle\2008\11\K08-01_Sitzungsprotokoll+KoKo+2008_01.doc" />
+    <Content Include="Groups\Protokolle\2008\11\K08-02_Sitzungsprotokoll+KoKo+2008_02.doc" />
+    <Content Include="Groups\Protokolle\2008\11\K08-11_Sitzungsprotokoll_6.11.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\11\K08-12B_Sitzungsprotokoll4.12.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\11\K08-12_Kalenderprotokoll3.12.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\11\KMV08-1_Sitzungsprotokoll_der_Mitgliederversammlung_26_10_2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\12\VV08-1_4.2.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\12\VV08-2_7.4.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\12\VV08-3_23.6.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\12\VV08-4_08.9.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\12\VVE08-1_4.2.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\12\VVE08-2ao_ Sonder-Trä-VV+April+08.doc" />
+    <Content Include="Groups\Protokolle\2008\12\VVE08-3_Juni 08.doc" />
+    <Content Include="Groups\Protokolle\2008\12\VVE08-4_Sept 08 neu.doc" />
+    <Content Include="Groups\Protokolle\2008\12\VVE08-5_Jan 09.doc" />
+    <Content Include="Groups\Protokolle\2008\33\BG08-02_Baugruppensitzung_2.08.pdf" />
+    <Content Include="Groups\Protokolle\2008\33\BG08-03_19.03.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\BG08-08_Protokoll+06.08.08.doc" />
+    <Content Include="Groups\Protokolle\2008\33\GA08-11B_Gartenaction Verschoben.doc" />
+    <Content Include="Groups\Protokolle\2008\33\GA08-11_Einladung zur Gartenaction Nov 2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\R08-09_Protokoll+Reformgruppe 16.09.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\R08-10_ProtokollReformgruppe 14.10.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\R08-12_Protokoll+Reformgruppe+9_12_08.pdf" />
+    <Content Include="Groups\Protokolle\2008\33\V08-01_29.01.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\33\V08-02_26.02.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\33\V08-03_26.03.2008.pdf" />
+    <Content Include="Groups\Protokolle\2008\33\V08-04-08.05.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-05_28.05.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-06_24.06.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-07_23.07.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-08_26.08.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-09ao_07.09.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-09_30.09.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-10_28.10.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-11_25.11.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\33\V08-12_16.12.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Einladung Q-VV01-08.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-01_09.01.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-02_13.02.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-03_12.03.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-04_09.04.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-05_14.05.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-06_11.06.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-07_09.07.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-08_13.08.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-09_10.09.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-10_08.10.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-11_12.11.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\Q08-12_10.12.2008.doc" />
+    <Content Include="Groups\Protokolle\2008\8\QVV08-1_30.01.2008.doc" />
+    <Content Include="Groups\Protokolle\2009\11\K09-02_Kalenderprotokoll04.02.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-03B_Sitzungsprotokoll_05.03.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-03_Kalendersitzung_04.03.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-04B_Betriebssitzung_01.04.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-04_Kalendersitzung_01.04.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-05B_Betriebssitzung06.05.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-05_Kalendersitzung06.05.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-06B_Betriebssitzung_03.06.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-06_Kalendersitzung_03.06.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-09B_Betriebssitzung_02.09.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-09_Kalendersitzung02.09.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-10B_Betriebssitzung07.10.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-10_Kalendersitzung07.10.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-11B_Betriebssitzung04.11.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-11_Kalendersitzung04.11.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-12B_Betriebssitzung02.12.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\K09-12_Kalendersitzung02.12.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\11\KMV09-1_Sitzung_30.08.2009.pdf" />
+    <Content Include="Groups\Protokolle\2009\12\VV09-1_12.01.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VV09-2_27.04.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VV09-3_07.09.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VV09-4_05.10.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VV09-5_30.11.2009+aktualisiert.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VVE09-1_januar 09.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VVE09-2_märz 09.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VVE09-3_august 09.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VVE09-4_september 09.doc" />
+    <Content Include="Groups\Protokolle\2009\12\VVE09-5_november 09.doc" />
+    <Content Include="Groups\Protokolle\2009\33\BG09-03_Protokoll+10.03.09.doc" />
+    <Content Include="Groups\Protokolle\2009\33\BG09-11_Protokoll+20.11.09.doc" />
+    <Content Include="Groups\Protokolle\2009\33\R09-01B_Reformgruppenprotokoll+21.01.2009.wps.pdf" />
+    <Content Include="Groups\Protokolle\2009\33\R09-01_Protokoll+Reformgruppensitzung+6.1.09.pdf" />
+    <Content Include="Groups\Protokolle\2009\33\R09-02_Protokoll+Reformgruppensitzung+3.2.2009.wps.pdf" />
+    <Content Include="Groups\Protokolle\2009\33\V09-01_27.01.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-02_24.02.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-03_24.03.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-04_21.04.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-05_26.05.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-06_30.06.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-07_28.07.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-08_25.08.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-09_29.09.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-10_27.10.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-11_24.11.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\33\V09-12_22.12.2009_ergaenzung.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-01_14.01.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-02_11.02.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-03_11.03.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-04_08.04.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-05_13.05.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-06_10.06.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-07_08.07.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-08_12.08.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-09_09.09.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-10_14.10.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-11_11.11.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\Q09-12_09.12.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\8\QVV09-1_04.02.2009.doc" />
+    <Content Include="Groups\Protokolle\2009\9\B09-11_Protokoll+Beizsitung+6.11.doc" />
+    <Content Include="Groups\Protokolle\2010\11\K10-01B_Betriebssitzung06.01.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-01_Kalendersitzung06.01.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-02B_Betriebssitzung_03.02.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-02_Kalendersitzung03.02.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-03B_Betriebssitzung_03.03.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-03_Kalendersitzung_03.03.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-04B_Betriebssitzung07.04.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-04_Kalendersitzung07.04.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-05B_Betriebssitzung_05.05.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-05_Kalendersitzung05.05.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-06_Kalendersitzung02062010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-07B_Betriebssitzung07.07.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-07_Kalendersitzung07.07.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-08B_Betriebssitzung04.08.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-08_Kalendersitzung04.08.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-09B_Betriebssitzung01.09.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-09_Kalendersitzung01.09.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-12B_Betriebssitzung1.Dez2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\K10-12_Kalendersitzung1.Dez2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\11\KMV10-1_Sitzung02.06.2010.pdf" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-1_18.01.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-2-15.03.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-3_05.07.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-4_26.07.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-5_09.08.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-6_04.10.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VV10-7_25.10.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-1_dezember 09.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-2_Feb 2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-3_Juni 2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-4_Juli 2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-5_August 2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-6_Oktober 2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-7_25.Okt.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-8B_Dez 2010.doc" />
+    <Content Include="Groups\Protokolle\2010\12\VVE10-8_27.Dez.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\32\S10-02_Stipro-ao4.2.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\32\S10-06_Stipro21-24.6.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-01_26.01.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-02_23.02.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-03_30.03.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-04_27.04.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-05_01.06.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-06_29.06.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-07_10.08.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-08_24.08.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-09_05.10.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-10_26.10.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-11_30.11.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\33\V10-12_28.12.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-01_13.01.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-02_10.02.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-03_10.03.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-04_14.04.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-05_12.05.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-06_09.06.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-07_21.07.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-09_08.09.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-10_13.10.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-11_10.11.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\Q10-12_08.12.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\QVV10-1b_21.04.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\8\QVV10-1_24.03.2010.doc" />
+    <Content Include="Groups\Protokolle\2010\9\B10-08_Protokoll+Beizensitzung+29.08.2010.doc" />
+    <Content Include="Groups\Protokolle\2011\11\K11-01B_Betriebssitzung5.Jan2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-01_Kalendersitzung5.Jan2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-02B_Betriebssitzung2.Feb2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-02_Kalendersitzung2.Feb2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-03B_Betriebssitzung2.Maerz2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-03_Kalendersitzung2.Maerz2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-04B_Betriebssitzung6.April2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-04_Kalendersitzung6.April2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-05B_Betriebssitzung4.Mai2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-05_Kalendersitzung4.Mai2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-06B_Betriebssitzung1.Juni2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-06_Kalendersitzung1.Juni2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-07B_Betriebssitzung6.Juli2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-07_Kalendersitzung6.Juli2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-08B_Betriebssitzung3.August2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-08_Kalendersitzung3.Aug2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-09B_Betriebssitzung 15.Sept 2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-09_Kalendersitzung 15.Sept 2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-10B_Betriebssitzung 5.Oktober 2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-10_Kalendersitzung 5.Okt 2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-11B_Betriebssitzung 2.Nov 2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\K11-11_Kalendersitzung 2.Nov 2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\11\KMV11_EinladungMVAugust2011.pdf" />
+    <Content Include="Groups\Protokolle\2011\12\VV10-8_03.01.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VV11-1_28.03.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VV11-2_27.06.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VV11-3_12.09.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VV11-4_26.09.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VV11-5_19.12.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VVE11-1_28.03.11.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VVE11-2_27.06.11.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VVE11-3_12.09.11.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VVE11-4_26.09.11.doc" />
+    <Content Include="Groups\Protokolle\2011\12\VVE11-5_19.12.11.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-01-25.01.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-02_22.02.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-03_29.03.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-04_26.04.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-05_31.05.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-06_28.06.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-07_26.07.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-08_30.08.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-09_27.09.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-10_25.10.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-11_29.11.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\33\V11-12_27.12.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-01_12.01.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-02_09.02.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-03_09.03.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-04_13.04.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-05_11.05.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-06B_08.06.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-06_08.06.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-07_13.07.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-08_10.08.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-09_14.09.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-10_12.10.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-11_09.11.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\Q11-12_14.12.2011.doc" />
+    <Content Include="Groups\Protokolle\2011\8\QVV11-1_02.03.2011.doc" />
+    <Content Include="Groups\Protokolle\2012\11\K12-01B_2012-01-04 Januar Betriebssitzung KoKo.pdf" />
+    <Content Include="Groups\Protokolle\2012\11\K12-01_2012-01-04 Januar Kalendersitzung KoKo.pdf" />
+    <Content Include="Groups\Protokolle\2012\11\K12-04_2012-04-04 KoKoprotokoll.pdf" />
+    <Content Include="Groups\Protokolle\2012\11\K12-05_2012-05-02 KoKoprotokoll.pdf" />
+    <Content Include="Groups\Protokolle\2012\11\K12-10_2012-10-03 koko_sitzung.pdf" />
+    <Content Include="Groups\Protokolle\2012\12\VV12-04_21012013.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VV12-1_05.03.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VV12-2_25.06.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VV12-3_01102012.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VVE12-1_05.03.12.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VVE12-2_25.06.12.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VVE12-3_01.10.12.doc" />
+    <Content Include="Groups\Protokolle\2012\12\VVE12-4_21.01.13.doc" />
+    <Content Include="Groups\Protokolle\2012\12\ÖT12-01_protokoll_hausordnungs-sitzung_i.doc" />
+    <Content Include="Groups\Protokolle\2012\12\ÖT12-02_protokoll_hausordnungs-sitzung_ii.doc" />
+    <Content Include="Groups\Protokolle\2012\12\ÖT12-03_koordinationssitzung beizkokohalle_12-03-12.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-01_31.01.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-02_28.02.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-03_27.03.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-04_24.04.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-05_29.05.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-06_26.06.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-07_31.07.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-08_28.08.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-09_25.09.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-10_30.10.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-11_27.11.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\33\V12-12_08.01.2013.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-01_11.01.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-02_15_02_2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-03_14.und 21.03.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-04_18.04.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-05_16.05.2012_mv.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-06_20.06.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-07_18.07.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-09_19.09.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-10_17.10.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-11-1_14.11.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-11B_21.11.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\Q12-12_19.12.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\8\QVV12-1_22.02.2012.doc" />
+    <Content Include="Groups\Protokolle\2012\9\B12-03_protokoll_beizengruppe_28.3.pdf" />
+    <Content Include="Groups\Protokolle\2012\9\B12-12_protokollbeizensitzung.pdf" />
+    <Content Include="Groups\Protokolle\2013\11\K13-07_03-07-2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\11\K13-11_06.11.2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\12\VV12-4_21012013.doc" />
+    <Content Include="Groups\Protokolle\2013\12\VV13-1ao_25022013.doc" />
+    <Content Include="Groups\Protokolle\2013\12\VV13-2ao_11032013.doc" />
+    <Content Include="Groups\Protokolle\2013\12\VV13-3_29042013.doc" />
+    <Content Include="Groups\Protokolle\2013\12\VV13-4_08072013.doc" />
+    <Content Include="Groups\Protokolle\2013\12\VV13-5_14102013.pdf" />
+    <Content Include="Groups\Protokolle\2013\33\V12-12_08.01.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-01_28.01.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-02_04.03.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-03_27.03.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-04_07.05.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-05_28.05.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-06_25.06.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-08_27.08.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-09_01.10.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\33\V13-10_30.10.2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-01_16.01.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-02_13.02.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-03_13.03.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-04_17.04.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-05_15.05.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-06_19.06.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-07_17.07.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-09_18.09.2013.doc" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-10_16.10.2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\8\Q13-11_13.11.2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-01_beizensitzung9.1.13.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-02_beizgruppensitzungam27.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-04_protokoll 17.4. beiz und traktanden.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-07_protokoll_beiz_14_07_2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-08_protokoll_beiz_14_08_2013.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-09_beizenprotokoll_5_.pdf" />
+    <Content Include="Groups\Protokolle\2013\9\B13-10_protokoll_22_10_2013.pdf" />
+    <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\jquery.cleditor.js" />
+    <Content Include="Scripts\jquery.cleditor.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.hotkeys.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.tree.min.js" />
+    <Content Include="Scripts\jquery.treeview.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\panorama\pano.js" />
+    <Content Include="Scripts\panorama\pano.swf" />
+    <Content Include="Scripts\panorama\pano.xml" />
+    <Content Include="Views\Home\Nostalgie.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <EntityDeploy Include="Agencies.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Agencies.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ExternalUsers.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ExternalUsers.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\PublishProfiles\kulti - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\kulti - Web Deploy.pubxml" />
+    <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+    <Content Include="Views\KultiEvents\EventsPrint.cshtml" />
+    <None Include="Scripts\ckeditor\CHANGES.md" />
+    <None Include="Scripts\ckeditor\LICENSE.md" />
+    <None Include="Scripts\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <None Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
+    <None Include="Scripts\ckeditor\plugins\scayt\README.md" />
+    <None Include="Scripts\ckeditor\plugins\wsc\LICENSE.md" />
+    <None Include="Scripts\ckeditor\plugins\wsc\README.md" />
+    <None Include="Scripts\ckeditor\README.md" />
+    <None Include="Scripts\ckeditor\skins\moono\readme.md" />
+    <Content Include="Views\Home\Group.cshtml" />
+    <Content Include="Views\Home\ListGroups.cshtml" />
+    <Content Include="Views\KultiEvents\EventsMeetingsCal.cshtml" />
+    <Content Include="Views\Home\About.Mobile.cshtml" />
+    <Content Include="Views\KultiEvents\ListEvents.Mobile.cshtml" />
+    <Content Include="Views\Home\Contact.Mobile.cshtml" />
+    <Content Include="Views\Account\ListUsersNoRoles.cshtml" />
+    <Content Include="Views\Home\Living.cshtml" />
+    <Content Include="Views\Forum\ForumPostAdmin.cshtml" />
+    <Content Include="Views\Agency\Index.cshtml" />
+    <Content Include="Views\Agency\Details.cshtml" />
+    <Content Include="Views\Agency\Create.cshtml" />
+    <Content Include="Views\Agency\Edit.cshtml" />
+    <Content Include="Views\Agency\Delete.cshtml" />
+    <Content Include="Views\Account\ResetPasswort.cshtml" />
+    <Content Include="Views\Account\ResetPasswortConfirmation.cshtml" />
+    <Content Include="Views\ExternalUsers\Index.cshtml" />
+    <Content Include="Views\ExternalUsers\Details.cshtml" />
+    <Content Include="Views\ExternalUsers\Create.cshtml" />
+    <Content Include="Views\ExternalUsers\Edit.cshtml" />
+    <Content Include="Views\ExternalUsers\Delete.cshtml" />
+    <Content Include="Views\Document\ImportDocs.cshtml" />
+    <Content Include="Views\Document\GetReport.cshtml" />
+    <Content Include="Views\Blacklist\ValidList.cshtml" />
+    <Content Include="Views\Forum\ViewTopic.cshtml" />
+    <Content Include="Views\Home\PanoramaView.cshtml" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Groups\Nostalgie\2012\Image\" />
+    <Folder Include="Groups\Nostalgie\2012\Sound\" />
+    <Folder Include="Groups\Nostalgie\2013\Party wetzikon\" />
+    <Folder Include="Groups\Nostalgie\2013\Video\" />
+    <Folder Include="Groups\Nostalgie\2014\Image\" />
+    <Folder Include="Groups\Nostalgie\2014\Sound\" />
+    <Folder Include="Groups\Nostalgie\2014\Video\" />
+    <Folder Include="Groups\Nostalgie\Images\Larry_Schmucki_1981\" />
+    <Folder Include="Groups\Nostalgie\Publikationen\Presse\2007\" />
+    <Folder Include="Groups\Nostalgie\Publikationen\Presse\2008\" />
+    <Folder Include="Groups\Nostalgie\Publikationen\Presse\2009\" />
+    <Folder Include="Groups\Nostalgie\Publikationen\Presse\2010\" />
+    <Folder Include="Groups\Nostalgie\Publikationen\Presse\2011\" />
+    <Folder Include="Groups\Nostalgie\Publikationen\Presse\2012\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\bolo1_hoerspiel\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\koko_konzerte\kokos_jazz_a_cochon_cherrymouth_1988\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\koko_konzerte\koko_member_faescht_1984\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\koko_konzerte\koko_wettrocken\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\lora_fete\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\lora_sendung\" />
+    <Folder Include="Groups\Nostalgie\SoundArchiv\plugin-jams\" />
+    <Folder Include="Groups\Protokolle\2001\10\" />
+    <Folder Include="Groups\Protokolle\2001\11\" />
+    <Folder Include="Groups\Protokolle\2001\12\" />
+    <Folder Include="Groups\Protokolle\2001\32\" />
+    <Folder Include="Groups\Protokolle\2001\33\" />
+    <Folder Include="Groups\Protokolle\2001\8\" />
+    <Folder Include="Groups\Protokolle\2001\9\" />
+    <Folder Include="Groups\Protokolle\2002\10\" />
+    <Folder Include="Groups\Protokolle\2002\11\" />
+    <Folder Include="Groups\Protokolle\2002\12\" />
+    <Folder Include="Groups\Protokolle\2002\32\" />
+    <Folder Include="Groups\Protokolle\2002\33\" />
+    <Folder Include="Groups\Protokolle\2002\8\" />
+    <Folder Include="Groups\Protokolle\2002\9\" />
+    <Folder Include="Groups\Protokolle\2003\10\" />
+    <Folder Include="Groups\Protokolle\2003\11\" />
+    <Folder Include="Groups\Protokolle\2003\12\" />
+    <Folder Include="Groups\Protokolle\2003\32\" />
+    <Folder Include="Groups\Protokolle\2003\33\" />
+    <Folder Include="Groups\Protokolle\2003\8\" />
+    <Folder Include="Groups\Protokolle\2003\9\" />
+    <Folder Include="Groups\Protokolle\2004\10\" />
+    <Folder Include="Groups\Protokolle\2004\11\" />
+    <Folder Include="Groups\Protokolle\2004\12\" />
+    <Folder Include="Groups\Protokolle\2004\32\" />
+    <Folder Include="Groups\Protokolle\2004\33\" />
+    <Folder Include="Groups\Protokolle\2004\8\" />
+    <Folder Include="Groups\Protokolle\2004\9\" />
+    <Folder Include="Groups\Protokolle\2005\10\" />
+    <Folder Include="Groups\Protokolle\2005\11\" />
+    <Folder Include="Groups\Protokolle\2005\12\" />
+    <Folder Include="Groups\Protokolle\2005\32\" />
+    <Folder Include="Groups\Protokolle\2005\33\" />
+    <Folder Include="Groups\Protokolle\2005\8\" />
+    <Folder Include="Groups\Protokolle\2005\9\" />
+    <Folder Include="Groups\Protokolle\2006\10\" />
+    <Folder Include="Groups\Protokolle\2006\11\" />
+    <Folder Include="Groups\Protokolle\2006\12\" />
+    <Folder Include="Groups\Protokolle\2006\32\" />
+    <Folder Include="Groups\Protokolle\2006\33\" />
+    <Folder Include="Groups\Protokolle\2006\8\" />
+    <Folder Include="Groups\Protokolle\2006\9\" />
+    <Folder Include="Groups\Protokolle\2007\10\" />
+    <Folder Include="Groups\Protokolle\2007\32\" />
+    <Folder Include="Groups\Protokolle\2007\9\" />
+    <Folder Include="Groups\Protokolle\2008\10\" />
+    <Folder Include="Groups\Protokolle\2008\32\" />
+    <Folder Include="Groups\Protokolle\2008\9\" />
+    <Folder Include="Groups\Protokolle\2009\10\" />
+    <Folder Include="Groups\Protokolle\2009\32\" />
+    <Folder Include="Groups\Protokolle\2010\10\" />
+    <Folder Include="Groups\Protokolle\2011\10\" />
+    <Folder Include="Groups\Protokolle\2011\32\" />
+    <Folder Include="Groups\Protokolle\2011\9\" />
+    <Folder Include="Groups\Protokolle\2012\10\" />
+    <Folder Include="Groups\Protokolle\2012\32\" />
+    <Folder Include="Groups\Protokolle\2013\10\" />
+    <Folder Include="Groups\Protokolle\2013\32\" />
+    <Folder Include="Images\Blacklist\" />
+    <Folder Include="Images\docTypes\" />
+    <Folder Include="Images\Events\" />
+    <Folder Include="LuceneService\Index\" />
+    <Folder Include="tempFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ManageEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Blacklist.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Blacklist.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="KultiBlog.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KultiBlog.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="KultiEvents.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KultiEvents.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\Calendar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="KultiDocument.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KultiDocument.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\ListAll.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ParameterCollection.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ParameterCollection.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParamCollection\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParamCollection\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParamCollection\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParamCollection\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParamCollection\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ManageRoles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ListUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ManageUserRoles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\ListEvents.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\ListBlogs.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KultiEvents\EventsMiniCal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lucene\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lucene\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\DeleteOwnPost.cshtml" />
+    <None Include="Views\Home\Index.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\ListPublishedDocs.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Forum.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Forum.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\IndexAdmin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forum\ForumPost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Mail\SendMail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blacklist\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blacklist\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blacklist\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blacklist\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blacklist\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blacklist\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60254</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60264/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

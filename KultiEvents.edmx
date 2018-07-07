@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KultiEventModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="KultiEventModelStoreContainer">
+          <EntitySet Name="Events" EntityType="KultiEventModel.Store.Events" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EvTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvStartDate" Type="datetime" />
+          <Property Name="EvEndDate" Type="datetime" />
+          <Property Name="EvUserId" Type="int" />
+          <Property Name="EvImgPath1" Type="nvarchar" MaxLength="150" />
+          <Property Name="EvImgPath2" Type="nvarchar" MaxLength="150" />
+          <Property Name="EvLocation" Type="int" />
+          <Property Name="EvStatus" Type="int" />
+          <Property Name="EvText" Type="nvarchar(max)" />
+          <Property Name="EvAdmission" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvType" Type="int" />
+          <Property Name="EvGroupId" Type="int" />
+          <Property Name="EvResponsible" Type="nvarchar" MaxLength="100" />
+          <Property Name="EvAgencyId" Type="int" />
+          <Property Name="EvInterInfo" Type="ntext" />
+          <Property Name="EvSize" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KultiEventModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="KultiEventsModel" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Events" EntityType="KultiEventModel.Events" />
+        </EntityContainer>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="EvTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EvStartDate" Type="DateTime" />
+          <Property Name="EvEndDate" Type="DateTime" />
+          <Property Name="EvUserId" Type="Int32" />
+          <Property Name="EvImgPath1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EvImgPath2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EvLocation" Type="Int32" />
+          <Property Name="EvStatus" Type="Int32" />
+          <Property Type="String" Name="EvText" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EvAdmission" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EvType" />
+          <Property Type="Int32" Name="EvGroupId" />
+          <Property Type="String" Name="EvResponsible" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EvAgencyId" />
+          <Property Type="String" Name="EvInterInfo" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EvSize" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KultiEventModelStoreContainer" CdmEntityContainer="KultiEventsModel">
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="KultiEventModel.Events">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="EvSize" ColumnName="EvSize" />
+                <ScalarProperty Name="EvInterInfo" ColumnName="EvInterInfo" />
+                <ScalarProperty Name="EvAgencyId" ColumnName="EvAgencyId" />
+                <ScalarProperty Name="EvResponsible" ColumnName="EvResponsible" />
+                <ScalarProperty Name="EvGroupId" ColumnName="EvGroupId" />
+                <ScalarProperty Name="EvType" ColumnName="EvType" />
+                <ScalarProperty Name="EvAdmission" ColumnName="EvAdmission" />
+                <ScalarProperty Name="EvText" ColumnName="EvText" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="EvTitle" ColumnName="EvTitle" />
+                <ScalarProperty Name="EvStartDate" ColumnName="EvStartDate" />
+                <ScalarProperty Name="EvEndDate" ColumnName="EvEndDate" />
+                <ScalarProperty Name="EvUserId" ColumnName="EvUserId" />
+                <ScalarProperty Name="EvImgPath1" ColumnName="EvImgPath1" />
+                <ScalarProperty Name="EvImgPath2" ColumnName="EvImgPath2" />
+                <ScalarProperty Name="EvLocation" ColumnName="EvLocation" />
+                <ScalarProperty Name="EvStatus" ColumnName="EvStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="KultiEvents">
+        <EntityTypeShape EntityType="KultiEventModel.Events" Width="2" PointX="1.25" PointY="1.875" Height="3.2357796223958326" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

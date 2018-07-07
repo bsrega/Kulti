@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ExternalUsersModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ExternalUsersModelStoreContainer">
+          <EntitySet Name="ExternalUsers" EntityType="ExternalUsersModel.Store.ExternalUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="ExternalUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Mieter" Type="nvarchar" MaxLength="255" />
+          <Property Name="Bewohner" Type="nvarchar" MaxLength="255" />
+          <Property Name="Beiz" Type="nvarchar" MaxLength="255" />
+          <Property Name="KoKo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Halle" Type="nvarchar" MaxLength="255" />
+          <Property Name="Gewerbetrakt" Type="nvarchar" MaxLength="255" />
+          <Property Name="Giesserei" Type="nvarchar" MaxLength="255" />
+          <Property Name="Schuer" Type="nvarchar" MaxLength="255" />
+          <Property Name="Villa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Wagenstrasse" Type="nvarchar" MaxLength="255" />
+          <Property Name="Veranstalter" Type="nvarchar" MaxLength="255" />
+          <Property Name="Geschaeftlich" Type="nvarchar" MaxLength="255" />
+          <Property Name="Verwaltung" Type="nvarchar" MaxLength="255" />
+          <Property Name="Stiftung" Type="nvarchar" MaxLength="255" />
+          <Property Name="Prot_Traeve" Type="nvarchar" MaxLength="255" />
+          <Property Name="Prot_Koko" Type="nvarchar" MaxLength="255" />
+          <Property Name="Prot_Halle" Type="nvarchar" MaxLength="255" />
+          <Property Name="Prot_Beiz" Type="nvarchar" MaxLength="255" />
+          <Property Name="Ehemalige" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sonstige" Type="nvarchar" MaxLength="255" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExternalUsersModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ExternalUsersEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="ExternalUsers" EntityType="ExternalUsersModel.ExternalUsers" />
+        </EntityContainer>
+        <EntityType Name="ExternalUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="LastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Email2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Mieter" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Bewohner" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Beiz" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="KoKo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Halle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Gewerbetrakt" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Giesserei" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Schuer" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Villa" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Wagenstrasse" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Veranstalter" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Geschaeftlich" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Verwaltung" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Stiftung" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Prot_Traeve" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Prot_Koko" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Prot_Halle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Prot_Beiz" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Ehemalige" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Sonstige" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ExternalUsersModelStoreContainer" CdmEntityContainer="ExternalUsersEntities">
+          <EntitySetMapping Name="ExternalUsers">
+            <EntityTypeMapping TypeName="ExternalUsersModel.ExternalUsers">
+              <MappingFragment StoreEntitySet="ExternalUsers">
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Mieter" ColumnName="Mieter" />
+                <ScalarProperty Name="Bewohner" ColumnName="Bewohner" />
+                <ScalarProperty Name="Beiz" ColumnName="Beiz" />
+                <ScalarProperty Name="KoKo" ColumnName="KoKo" />
+                <ScalarProperty Name="Halle" ColumnName="Halle" />
+                <ScalarProperty Name="Gewerbetrakt" ColumnName="Gewerbetrakt" />
+                <ScalarProperty Name="Giesserei" ColumnName="Giesserei" />
+                <ScalarProperty Name="Schuer" ColumnName="Schuer" />
+                <ScalarProperty Name="Villa" ColumnName="Villa" />
+                <ScalarProperty Name="Wagenstrasse" ColumnName="Wagenstrasse" />
+                <ScalarProperty Name="Veranstalter" ColumnName="Veranstalter" />
+                <ScalarProperty Name="Geschaeftlich" ColumnName="Geschaeftlich" />
+                <ScalarProperty Name="Verwaltung" ColumnName="Verwaltung" />
+                <ScalarProperty Name="Stiftung" ColumnName="Stiftung" />
+                <ScalarProperty Name="Prot_Traeve" ColumnName="Prot_Traeve" />
+                <ScalarProperty Name="Prot_Koko" ColumnName="Prot_Koko" />
+                <ScalarProperty Name="Prot_Halle" ColumnName="Prot_Halle" />
+                <ScalarProperty Name="Prot_Beiz" ColumnName="Prot_Beiz" />
+                <ScalarProperty Name="Ehemalige" ColumnName="Ehemalige" />
+                <ScalarProperty Name="Sonstige" ColumnName="Sonstige" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ExternalUsers">
+        <EntityTypeShape EntityType="ExternalUsersModel.ExternalUsers" Width="1.5" PointX="0.75" PointY="0.75" Height="5.0436002604166656" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
