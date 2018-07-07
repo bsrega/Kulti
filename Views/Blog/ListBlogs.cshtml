@@ -1,0 +1,22 @@
+﻿@model List<Tuple<string, string, string, string>>
+
+<div style="height: 15em; overflow: auto;" class="scroll">
+  @if (Model.Count > 0)
+  {
+    <ul>
+      @foreach (var Item in Model)
+      {
+        <li>
+          <div class="title">@Item.Item2</div>
+          @Item.Item4, @Item.Item1
+          <br/>
+          <p>@Html.Raw(Item.Item3)</p>
+        </li>
+      }
+    </ul>
+  }
+  else
+  {
+    <div>keine News vorhanden..</div>
+  }
+</div>

@@ -1,0 +1,47 @@
+﻿@model Mvc4_Kulti.Documents
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<h3>Dieses Dokument löschen?</h3>
+<br/>
+<fieldset>
+    <legend>Dokument</legend>
+    <br/>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+    <br/>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateDate)
+    </div>
+    <br/>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublishDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublishDate)
+    </div>
+    <br/>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FileExtension)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Löschen" /> |
+        @Html.ActionLink("Zurück zur Liste", "ListAll")
+    </p>
+}

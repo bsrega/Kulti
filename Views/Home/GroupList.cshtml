@@ -1,0 +1,65 @@
+﻿@using Mvc4_Kulti
+@using Mvc4_Kulti.Controllers
+
+@{
+  ViewBag.Title = "Kulturfabrik Home Page";
+}
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var par = $('#slickbox');
+    $(par).hide();
+
+     // toggles the slickbox
+      $('#slick-toggle').click(function() {
+        $(par).toggle(400);
+      });
+  });
+</script>
+
+<div>
+  <fieldset>
+    <legend>Kultur</legend>
+    @if (Request.QueryString["groupType"] != null)
+    {
+      @Html.Action("ListGroups", "Home", new {groupType = Request.QueryString["groupType"]})
+    }
+    else
+    {
+      @Html.Action("Group", "Home", new {groupName = Request.QueryString["groupName"]})
+    }
+  </fieldset>  
+</div> 
+
+@section featured {
+  <section class="featured">
+    
+    <fieldset>
+      <legend>Neueste Meldungen</legend>
+      @Html.Action("ListBlogs", "Blog")
+    </fieldset>
+    <br/>
+    <br/>
+    <fieldset>
+      <legend>Termine</legend>
+        <img id="slick-toggle" style="cursor:pointer;" src="../../Images/maximize.gif" />
+        <div id="slickbox">
+          @Html.Action("EventsMiniCal", "KultiEvents")
+        </div>
+    </fieldset>
+    <br/>
+    <br/>
+    <fieldset>
+      <legend>Dokumente</legend>
+      @Html.Action("ListPublishedDocs","Document")      
+    </fieldset>
+
+  </section>
+}
+
+
+
+
+
+

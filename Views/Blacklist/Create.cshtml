@@ -1,0 +1,165 @@
+﻿@model Mvc4_Kulti.Blacklist
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $("#FromDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd/mm/yy'
+    });
+
+    $("#ToDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd/mm/yy'
+    });
+
+  });
+
+  function checkForm() {
+    var corrected = false;
+    var frmOk = true;
+    // get form variables
+    var FirstName = document.getElementById("FirstName");
+    var LastName = document.getElementById("LastName");
+    var Reason = document.getElementById("Reason");
+    var FromDate = document.getElementById("FromDate");
+    var ToDate = document.getElementById("ToDate");
+
+    FirstName.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    LastName.onfocus = function () {
+      this.removeAttribute("style");
+      frmOk = true;
+    };
+
+    Reason.onfocus = function () {
+      Reason.removeAttribute("style");
+      Reason.setAttribute("style", "width: 300px; height: 40px;");
+      frmOk = true;
+    };
+
+    FromDate.onfocus = function () {
+      this.removeAttribute("style");
+      frmOk = true;
+    };
+
+    ToDate.onfocus = function () {
+      this.removeAttribute("style");
+      frmOk = true;
+    };
+    
+    //check values
+    if (FirstName.value.length < 1) {
+      FirstName.value = "Vorname erforderlich";
+      FirstName.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (LastName.value.length < 1) {
+      LastName.value = "Nachname erforderlich";
+      LastName.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (Reason.value.length < 1) {
+      Reason.value = "Grund erforderlich";
+
+      Reason.setAttribute("style", "background-color: yellow; width: 300px; height: 40px;");
+      
+      frmOk = false;
+    }
+
+    if (FromDate.value.length == 0) {
+      FromDate.value = "Datum erforderlich";
+      FromDate.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (ToDate.value.length < 1) {
+      ToDate.value = "Datum erforderlich";
+      ToDate.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }    
+
+    return frmOk;
+  }
+  
+</script>
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+@using (Html.BeginForm("Create", "Blacklist", FormMethod.Post, new {enctype = "multipart/form-data", id = "thisform"}))
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Neuer Eintrag in Blacklist</legend>
+
+    <div class="editor-label">
+      @Html.Label("Vorname")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.FirstName)
+      @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Nachname")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.LastName)
+      @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Grund")
+    </div>
+    <div class="editor-field">
+      @Html.TextAreaFor(model => model.Reason, new { cols = 3, @rows = 2, @style = "width: 300px; height: 40px" })
+      @Html.ValidationMessageFor(model => model.Reason)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Gültig ab")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.FromDate)
+      @Html.ValidationMessageFor(model => model.FromDate)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Gültig bis")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.ToDate)
+      @Html.ValidationMessageFor(model => model.ToDate)
+    </div>
+            
+    <div class="editor-label">@Html.Label("Bild")</div>
+    <div class="editor-field"><input type="file" id="img" name="img" /></div>
+
+    <p>
+      <input type="submit" value="Erstellen" onclick="return checkForm();" />
+    </p>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Zurück zur Liste", "List")
+</div>
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+  @Scripts.Render("~/bundles/jqueryui")
+  @Styles.Render("~/Content/themes/base/css")
+}

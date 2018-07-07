@@ -1,0 +1,43 @@
+﻿@model Mvc4_Kulti.ViewModels.ListAllUsersViewModel
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<script>
+  $(document).ready(function () {
+    $("#tbl1 tr:even").css("background-color", "silver");
+  });
+</script>
+
+@{
+    ViewBag.Title = "Mitglieder ohne Rollen";
+}
+
+<table>
+  <tr>
+    <td style="width: 250px;"><h3 style="margin: 0;">@ViewBag.Title</h3></td>
+    <td>@Html.ActionLink("Alle Mitglieder", "ListUsers", "Account")</td>
+  </tr>
+</table>
+
+<hr/>
+
+<table id="tbl1" style="border-collapse: collapse;">
+@foreach (var item in Model.Users2)
+{
+  <tr>
+    <td style="padding-right: 20px;">
+      <strong>@item.Item1</strong> 
+    </td>
+    <td style="padding-right: 20px;">@item.Item2</td>
+    <td style="padding-right: 20px;">
+      @Html.ActionLink("Rollen", "ManageUserRoles", new { UserName = item.Item1 })
+    </td>
+    <td>
+      @Html.ActionLink("Löschen", "DeleteUser", new { UserName = item.Item1 }, new { onclick = "return confirm('User löschen ?')" })
+    </td>
+  </tr>
+}
+</table>

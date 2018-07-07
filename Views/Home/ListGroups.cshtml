@@ -1,0 +1,96 @@
+﻿@using Mvc4_Kulti.ViewModels
+@model IEnumerable<Mvc4_Kulti.ViewModels.GroupViewModel>
+
+@{
+  ViewBag.Title = "Kultur, Gewerbe & Atelies";
+}
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".scroll").mCustomScrollbar({
+      theme: "dark-thick"
+    });
+  });
+</script>
+
+<fieldset class="ui-widget ui-widget-content">
+  <legend class="ui-widget-header ui-corner-all">
+    <span id="newTitle">Räume @Model.First().GroupType</span>
+  </legend>
+
+  @*<div style="height: 32.5em; overflow: auto" class="scroll">
+    *@
+    <table style="width: 100%;">
+      @foreach (GroupViewModel item in Model)
+      {
+        <tr style="margin-top: 20px">
+          <td style="padding-right: 20px; vertical-align: top;">
+            <a href="@sLink(@item.GroupType, @item.GroupName)">
+              <img src="@sImg(@item.GroupType, @item.GroupName)" alt="img" style="border: none; width: 16em;"/>
+            </a>
+          </td>
+          <td style="vertical-align: top;">
+            @Html.Raw(item.HtmlShortTxt)
+          </td>
+        </tr>
+        <tr><td colspan="2"><br/></td></tr>
+      }
+    </table>   
+
+@*  </div>*@
+ 
+</fieldset>
+
+@section featured {
+  <section class="contact">
+    @if (Model.First().GroupType == "Kultur")
+    {
+      <header>
+        <h3>Generelle Info über die Kulturräume</h3>
+      </header>
+        <div>
+        Für die Nutzung des öffentlichen Raumes der Kulturfabrik, etwa ein Markt, ein Freiluft-Jonglagetreffen etc. 
+        ist der Trägerschaftsverein Ansprechspartner.
+        <br/>
+        Die Kulturräume der Kulturfabrik werden ausschliesslich von öffentlichen Vereinen gemietet und bespielt. 
+      </div>
+    }
+    else
+    {
+      <header>
+        <h3>Generelle Info über das Gewerbe</h3>
+      </header>
+      <div>
+        Die Kulturfabrik umfasst neben dem öffentlichen Veranstaltungstrakt in den "privaten" hinteren Gebäudeteilen auch Gewerbe-, Wohn-, Atelier- und Musikräume.
+        <br/>
+        Diese Räume werden vom Trägerschaftsverein (Träve) an Einzelpersonen oder Gruppen vermietet.
+        <br/>
+        Frei werdende Räume werden per Inserat im A-Bulletin ausgeschrieben. Es wird auch eine Warteliste geführt. 
+        <br/>
+        Neu-MieterInnen müssen von der Vollversammlung gewählt werden.  
+      </div>
+    }
+    <div>
+      <h3>Info</h3>
+      Fragen?
+      Stelle sie uns <span style="background-color: white;"> @Html.ActionLink("hier", "Contact", "Home", new {id = "9" }, null)</span>
+      <br/>
+      Wie helfen dir gerne weiter!
+    </div>
+  </section>
+}
+
+@functions
+{
+
+  private string sImg(string type, string name)
+  {
+    return "/Groups/" + type + "/" + name + "/logoSmall.jpg";
+  }
+
+  private string sLink(string type, string name)
+  {
+    return "/Home/Group?grouptype=" + type + "&groupname=" + name;
+  }
+
+}

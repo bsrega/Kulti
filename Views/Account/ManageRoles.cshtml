@@ -1,0 +1,35 @@
+﻿@model Mvc4_Kulti.Models.ManageRoles
+
+@{
+    ViewBag.Title = "Rolle erstellen";
+}
+
+<hgroup class="title">
+  <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<p>
+  You're logged in as <strong>@User.Identity.Name</strong>. | @Html.ActionLink("manage","Manage","Account")
+</p>
+
+@using (Html.BeginForm("ManageRoles", "Account")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Change Email Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.NewRole)
+                @Html.TextBoxFor(m => m.NewRole)
+                @Html.ValidationMessageFor(m => m.NewRole)
+            </li>
+
+        </ol>
+        <input type="submit" value="Rolle erstellen" />
+    </fieldset>
+}
+
+

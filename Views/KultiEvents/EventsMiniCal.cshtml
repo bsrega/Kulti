@@ -1,0 +1,86 @@
+﻿<style>
+   #calendar {
+     margin: 0 auto;
+     width: 18em;
+   }
+ </style>
+<link href="../../Content/Cal/fullcalendar.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/fullcalendar/fullcalendar.js" type="text/javascript"> </script>
+<link href="../../Content/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery-ui-1.10.3.js" type="text/javascript"></script>
+
+<script>
+
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      theme: false,
+      header: {
+        left: 'title',
+        center: '',
+        right: 'today prev,next'
+      },
+				  eventClick: function(event) {
+				    var fstart  = $.fullCalendar.formatDate(event.start, "dd/MM/yy HH:mm");
+						var fend  = $.fullCalendar.formatDate(event.end, "dd/MM/yy HH:mm");				  
+						var schdata = {sid:event.sid, deleted:1, uid:event.uid};
+						
+						$( "#reserveinfo" ).dialog({
+							autoOpen: false,
+							height: 280,
+							width: 400,
+							modal: true,
+							position: "center",
+							draggable: false,
+							buttons: {
+								"close": function() {
+									$( this ).dialog( "close" );
+								}
+							}
+						});
+						
+						var showtopic = '';
+						
+						if(event.title.length > 15)
+						{ showtopic = event.title.substring(0, 15) + '...'; }
+						else 
+						{ showtopic = event.title; }
+
+				    $("#revdesc").html('<div class="label">' + showtopic + "</div>" + 
+				      '<div>' + event.description + '</div>');
+						
+						$( "#reserveinfo" ).dialog( 
+							{ title:  fstart + " - " + fend }
+						);
+						
+						$( "#reserveinfo" ).dialog( "open" );
+						return false;
+				  },
+
+      events: '/KultiEvents/CalendarJson',
+      monthNames: ["Jan", "Feb", "März", "Apr", "Mai", "Juni",
+        "Juli", "Aug", "Sept", "Okt", "Nov", "Dez"],
+      dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch',
+        'Donnerstag', 'Freitag', 'Samstag'],
+      dayNamesShort: ['Mon', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
+      txt_noEvents: "Keine Events in dieser Periode",
+      txt_SpecificEvents_prev: "",
+      txt_SpecificEvents_after: "eventos:",
+      txt_next: "später",
+      txt_prev: "früher",
+      txt_NextEvents: "Próximos eventos:",
+      txt_GoToEventUrl: "go to Event",
+      txt_today: "Heute",
+     
+    });
+
+  });
+
+</script>
+
+<div id="calendar"></div>
+
+<div id=reserveinfo title=Details>
+  <div id=revtitle></div>
+  <div id=revdesc></div>
+  </div>

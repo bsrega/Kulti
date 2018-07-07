@@ -1,0 +1,78 @@
+﻿<style>
+  #sidebar {
+    display: none;
+  }
+  #content {
+    width: 90%;
+  }
+</style>
+
+@model Mvc4_Kulti.Events
+
+<h3>Dieser Event wirklich löschen?</h3>
+<br/>
+<fieldset>
+    <legend>Event</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvStartDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvStartDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvEndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvEndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvUserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvUserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvImgPath1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvImgPath1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvImgPath2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvImgPath2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvLocation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvLocation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EvStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EvStatus)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

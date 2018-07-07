@@ -1,0 +1,178 @@
+﻿@model List<Tuple<Mvc4_Kulti.Events, string, string, string>>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $("#StartDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy',
+      timeFormat: 'hh:mm:ss',
+      onSelect: function(dateText, inst) {
+        var field = document.getElementById("StartDate");
+        dateText = dateText;
+        field.value = dateText;
+      }
+    });
+
+    $("#EndDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy',
+      timeFormat: 'hh:mm:ss',
+      onSelect: function(dateText, inst) {
+        var field = document.getElementById("EndDate");
+        dateText = dateText;
+        field.value = dateText;
+      }
+    });
+
+    $("#frm1").validate({
+      rules: {
+        StartDate: {
+          required: true
+        },
+        EndDate: {
+          required: true
+        }
+      },
+      messages: {
+        StartDate: {
+          required: "Datum angeben"
+        },
+        EndDate: {
+          required: "Datum angeben"
+        }
+      }
+    });
+
+  });
+
+</script>
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+
+@{
+  ViewBag.Title = "Events - Druckansicht";
+}
+
+@if (Model == null)
+{
+  using (Html.BeginForm("EventsPrint", "KultiEvents", FormMethod.Post, new {id = "frm1"}))
+  {
+    <fieldset>
+      <legend>Events - Druckansicht Auswahl</legend>
+      <table style="width: 100%">
+        <tr>
+          <td>Start</td>
+          <td>
+            @Html.TextBox("StartDate")
+          </td>
+        </tr>
+        <tr>
+          <td>Ende</td>
+          <td>
+            @Html.TextBox("EndDate")
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="Erstellen" id="btnSave" /> 
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+  }
+}
+
+<style>
+  table { width: 100%; }
+
+  td { text-align: left; }
+</style>
+
+@if (Model != null)
+{
+  <div id="prnt">
+    <div>
+      <strong>Kulturfabrik Wetzikon</strong> - Version @Html.Raw(DateTime.Now.ToShortDateString())
+      <br/>
+      Dieses Programm wird den direkt anstossenden Nachbarn der Kulturfabrik Wetzikon, der Stadt- und Kantonspolizei alle zwei Monate verteilt. 
+      <br/>
+      <br/>
+      Bei kleinen Veranstaltungen wird mit einer PP Anzahl von 10-20 PW gerechnet.
+      <br/>
+      Bei mittleren mit einer Anzahl von 20-40 PW.
+      <br/>
+      Bei grösseren mit einer Anzahl von 40-70 PW.
+      <br/>
+      <br/>
+      <strong>Ansprechpersonen:</strong>
+      <br/>
+      Brigitte Ammon, Breitistrasse 1, 8626 Ottikon, 079 193 21 56
+      <br />
+      Roman Gröbli, Rappenstrasse 11, 8307 Effretikon, 076 339 25 04 (Verein KultiHalle)
+      <br/>
+      Sandra Heiniger, Zelgmatt 3, 8627 Grüningen, 078 709 68 68 (Verein KoKo)
+      <br/>
+      Dominic Schaufelberger, Usterstrasse 105, 8620 Wetzikon, 078 808 59 09 (Verein KultiHalle)
+      <br/>
+      Barbara Kunz, 079 728 29 23 (Beizengruppe)
+      <br/>
+      David Bächli, Zürcherstrasse 40, 8620 Wetzikon, 079 278 33 07 (Verein KultiHalle)
+      <br/>
+      <br/>
+      <strong>Programm @ViewBag.start bis @ViewBag.end</strong>
+    </div>
+    <table>
+      <tr>
+        <td>Veranstaltungsdatum</td>
+        <td>Veranstalter</td>
+        <td>Veranstaltungsgrösse / PP-Bedarf</td>
+        <td>Ansprechpersonen seitens Kulti</td>
+      </tr>
+      @foreach (var item in Model)
+      {
+        <tr>
+          <td>@item.Item1.EvStartDate.Value.ToString("dd/MM/yy HH:mm") - <br />@item.Item1.EvEndDate.Value.ToString("dd/MM/yy HH:mm")</td>
+          <td>@item.Item3</td>
+          <td>@item.Item2</td>
+          <td>@item.Item4</td>
+        </tr>
+      }
+    </table>
+    <br/>
+    <div>
+      Falls Sie Fragen zu dieser Übersicht haben, können Sie mich kontaktieren. 
+      Auch sonst stehe ich Ihnen gerne als Ansprechperson zur Verfügung.
+      <br/>
+      Freundliche Grüsse 
+      <br/>
+      Dominic Schaufelberger
+    </div>
+  </div>
+  <br/>
+  <input type="button" value="Drucken" onclick="javascript:printDiv('prnt');" />
+}
+
+<script type="text/javascript">
+  function printDiv(divID) {
+    //Get the HTML of div
+    var divElements = document.getElementById(divID).innerHTML;
+    //Get the HTML of whole page
+    var oldPage = document.body.innerHTML;
+    //Reset the page's HTML with div's HTML only
+    document.body.innerHTML =
+      "<html><head><title></title></head><body>" +
+        divElements + "</body>";
+    //Print Page
+    window.print();
+    //Restore orignal HTML
+    document.body.innerHTML = oldPage;
+  }
+</script>

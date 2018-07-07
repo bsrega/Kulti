@@ -1,0 +1,96 @@
+﻿@model Mvc4_Kulti.Agencies
+
+@{
+    ViewBag.Title = "Veranstalter löschen";
+}
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<fieldset>
+    <legend>Veranstalter löschen</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgenyGroupId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgenyGroupId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyStreet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyStreet)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyZip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyZip)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyCity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyCity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactPhone)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Löschen" /> |
+        @Html.ActionLink("zurück", "Index")
+    </p>
+}

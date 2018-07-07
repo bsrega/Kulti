@@ -1,0 +1,42 @@
+﻿@model Mvc4_Kulti.Models.RegisterModel
+
+<hgroup class="title">
+    <h3>Kulti - Registration</h3>
+</hgroup>
+<br/>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+  <fieldset>
+    <legend>Ich möchte mich als Mitglied registrieren</legend>
+    <ol>
+      <li>
+        @Html.Label("User-Name")
+        @Html.TextBoxFor(m => m.UserName)
+      </li>
+      <li>
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+      </li>
+      <li>
+        @Html.Label("Passwort")
+        @Html.PasswordFor(m => m.Password)
+      </li>
+      <li>
+        @Html.Label("Passwort wiederholen")
+        @Html.PasswordFor(m => m.ConfirmPassword)
+      </li>
+    </ol>
+    <input type="submit" value="Registriere mich" />
+    <div>
+	<strong>Nicht vergessen: Sende ein Email an Stephan mit der Angabe, welche Rolle(n) dem neuen Mitglied zugewiesen werden soll.</strong>
+    </div>
+  </fieldset>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

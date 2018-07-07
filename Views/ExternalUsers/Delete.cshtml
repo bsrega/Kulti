@@ -1,0 +1,185 @@
+﻿@model Mvc4_Kulti.ExternalUsers
+
+@{
+    ViewBag.Title = "Löschen";
+}
+
+
+<h3>Willst Du diesen User wirklich löschen?</h3>
+<fieldset>
+    <legend>External-User löschen</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mieter)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mieter)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bewohner)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bewohner)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Beiz)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Beiz)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.KoKo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KoKo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Halle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Halle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gewerbetrakt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gewerbetrakt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Giesserei)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Giesserei)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Schuer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Schuer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Villa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Villa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Wagenstrasse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Wagenstrasse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Veranstalter)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Veranstalter)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Geschaeftlich)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Geschaeftlich)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Verwaltung)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Verwaltung)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stiftung)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stiftung)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Prot_Traeve)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prot_Traeve)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Prot_Koko)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prot_Koko)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Prot_Halle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prot_Halle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Prot_Beiz)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prot_Beiz)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ehemalige)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ehemalige)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sonstige)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sonstige)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Löschen" /> |
+        @Html.ActionLink("zurück zur Liste", "Index")
+    </p>
+}

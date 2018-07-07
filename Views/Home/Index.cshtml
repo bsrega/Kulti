@@ -1,0 +1,95 @@
+﻿@{
+  ViewBag.Title = "Kulturfabrik Home Page";
+}
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var par = $('#slickbox');
+    $(par).hide();
+
+     // toggles the slickbox
+      $('#slick-toggle').click(function() {
+        $(par).toggle(400);
+      });
+
+      var slideHeight = 500;
+      $(".slide").each(function () {
+        var $this = $(this);
+        var $wrap = $this.children(".wrap");
+        var defHeight = $wrap.height();
+        if (defHeight >= slideHeight) {
+          var $readMore = $this.find(".read-more");
+          $wrap.css("height", slideHeight + "px");
+          $readMore.append("<a href='#'>mehr..</a>");
+          $readMore.children("a").bind("click", function (event) {
+            var curHeight = $wrap.height();
+            if (curHeight == slideHeight) {
+              $wrap.animate({
+                height: defHeight
+              }, "normal");
+              $(this).text("schliessen");
+              $wrap.children(".gradient").fadeOut();
+            } else {
+              $wrap.animate({
+                height: slideHeight
+              }, "normal");
+              $(this).text("mehr..");
+              $wrap.children(".gradient").fadeIn();
+            }
+            return false;
+          });
+        }
+      });
+
+  });
+</script>
+
+<div>
+  
+  @if (@TempData["Success"] != null)
+  { <div class="message-success">@TempData["Success"].ToString()</div> }
+                                                 
+@if (Request.QueryString["groupName"] == null)
+{
+  <span style="color: green;font-size: 2em;font-weight: bold;">Events@Kulturfabrik</span>
+  <br/>
+  <br/>
+  @Html.Action("ListEvents", "KultiEvents")
+}
+else
+{
+  <fieldset class="ui-widget ui-widget-content">
+      <legend class="ui-widget-header ui-corner-all"></legend> 
+      @Html.Action("Group", "Home", new { groupName = Request.QueryString["groupName"] }) 
+  </fieldset>
+}
+</div>
+
+@section featured {
+<div id="featured">
+  <br/>
+  <fieldset class="ui-widget ui-widget-content">
+    <legend class="ui-widget-header ui-corner-all">Neueste Meldungen</legend>
+    @Html.Action("ListBlogs", "Blog")
+  </fieldset>
+  <br/>
+  <fieldset class="ui-widget ui-widget-content">
+    <legend class="ui-widget-header ui-corner-all">Termine</legend>
+    <div>
+      @Html.Action("EventsMeetingsCal", "KultiEvents")
+    </div>
+  </fieldset>
+  <br/>
+  <fieldset class="ui-widget ui-widget-content">
+    <legend class="ui-widget-header ui-corner-all">Dokumente</legend>
+    @Html.Action("ListPublishedDocs", "Document")      
+  </fieldset>
+
+</div>
+}
+
+
+
+
+
+

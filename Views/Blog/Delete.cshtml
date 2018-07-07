@@ -1,0 +1,42 @@
+﻿@model Mvc4_Kulti.Blog
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<hgroup class="title">
+    <h3>@ViewBag.Message</h3>
+</hgroup>
+
+<h3>Diese News wirklich löschen?</h3>
+<br/>
+<fieldset>
+    <legend>News</legend>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BlogText)
+    </div>
+    <div class="display-field" style="height: 100px; overflow: auto;">
+        @Html.DisplayFor(model => model.BlogText)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Löschen" /> |
+        @Html.ActionLink("Zurück zur Liste", "Index")
+    </p>
+}

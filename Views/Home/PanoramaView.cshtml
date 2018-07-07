@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<script src="../../Scripts/panorama/pano.js" type="text/javascript"></script>
+<html>
+<head>
+  <title>Panorama View</title>
+  <style type="text/css">
+    #sidebar { display: none; }
+  </style>
+</head>
+  <body>
+    <div id="pano" style="width:640px;height:400px;">
+      @*<noscript>
+        <table style="width:640px;height:400px;">
+          <tr style="valign:middle;">
+            <td>
+              <div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div>
+            </td>
+          </tr>
+        </table>
+      </noscript>*@
+    <script>
+      embedpano({ swf: "../../Scripts/panorama/pano.swf", xml: "../../Scripts/panorama/pano.xml", target: "pano", html5: "prefer", passQueryParameters: true });
+    </script>
+</div>
+  </body>
+</html>
+
+
+

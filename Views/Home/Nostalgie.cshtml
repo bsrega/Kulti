@@ -1,0 +1,154 @@
+﻿@model Mvc4_Kulti.ViewModels.NostalgieViewModel
+@{
+	ViewBag.Title = "Nostalgie";
+}
+
+<style>
+	#accordion { width: 220px; }
+	#accordion-resizer {
+    padding: 5px;
+    width: 220px;
+    height: 420px;
+	}
+	.Fdr {
+		cursor: pointer;
+		font-size: 10px;
+		padding: 0px;
+	}
+</style>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+
+		$("#accordion").accordion({
+			active: false,
+			collapsible: true,
+			heightStyle: "content"
+		});
+		
+		$("#accordion-resizer").resizable({
+			minHeight: 300,
+			minWidth: 220,
+			resize: function() {
+			$("#accordion").accordion( "refresh" );
+			}
+		});
+
+		$(".Fdr").click(function () {
+			var f = $(this).attr("FldName");
+			var id = $(this).attr("id");
+			var path = "/Groups/Nostalgie/" + id + "/" + f;
+			$.ajax({
+				url: "/Home/ViewFolder",
+				data: { name: f, year: id },
+				type: "GET",
+				dataType: "json",
+				contentType: "application/json",
+				cache: false,
+				success: function (data) {
+					$("#ImageGallery").empty();
+					$("#TopGallery").empty();
+					$.each(data, function (i, item) {
+						switch (item.substr(item.length - 3, 3).toLowerCase()) {
+							case "jpg":
+								var r = $("<img />").attr({
+									"src": (path + "/" + item),
+									"style": "width: 100px; height: auto; padding: 2px;"
+								});
+								$("<a>").attr({
+									href: (path + "/" + item),
+									rel: "widget"
+								}).html(r).addClass("fancybox").appendTo("#ImageGallery");
+								break;
+							case "mp3":
+								$("<audio></audio>").attr({
+									controls: 'controls',
+									src: (path + "/" + item),
+									style: "width: 300px;height:30px;",
+									title: item
+								}).appendTo("#TopGallery").after("<div>" + item + "</div>");
+								break;
+							case "mp4":
+								$("<video></video>").attr({
+									'src': (path + "/" + item),
+									controls: 'controls',
+									type: 'video/mp4'
+								}).appendTo("#TopGallery");
+								break;
+							default:
+								$("#TopGallery").append("<div id='txtDiv'>" + item + "</div>");
+								break;
+						}
+					});
+
+					$(".fancybox").fancybox(
+						{
+							fitToView: true,
+							autoSize: false,
+							width: 650,
+							height: 520
+						}
+					);
+				}
+			}); //$.ajax
+			return false;
+		});  //$(".Fdr").click
+	});  //$(document).ready
+
+</script>
+<fieldset class="ui-widget ui-widget-content">
+	<legend class="ui-widget-header ui-corner-all"><span id="newTitle">@ViewBag.Title</span></legend>
+	<div>
+		<table style="width: 100%;">
+			<tr>
+				<td>
+					<div id="accordion">
+						@foreach (var e in Model.ClsNos.SubFolders)
+						{
+							<h3>@e.FolderName</h3>
+							<div>
+								<ul>
+									@foreach (var w in e.SubFolders)
+									{
+										<li class="Fdr" id="@e.FolderName" FldName="@w.FolderName">
+											@w.FolderName
+										</li>
+									}
+								</ul>
+							</div>
+						}
+					</div>
+				</td>
+				<td>
+					<div id="TopGallery"></div>
+					<div id="ImageGallery"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</fieldset>
+
+@section featured {
+	<section class="contact">
+		<header>
+			<h3>Unsere Vergangenheit..</h3>
+		</header>
+		Die Kulti sieht sich als langfristiges Projekt.
+		<br />
+		In diesem Zusammenhang ist es wichtig und interessant, lange Entwicklungsphasen zu überblicken, um sie nachvollziehen und verstehen zu können.
+		<br />
+		Ausserdem macht es Spass:
+		<br />
+		Ältere schwelgen im "Weisst Du noch?" - Jüngere können das Damals entdecken und es mit dem Heute vergleichen...
+		<br />
+		Das vorliegende Archivmaterial ist bis jetzt unvollständig und wird laufend ergänzt.
+		<br />
+		Wer also noch Interessantes beisteuern kann und möchte, am Besten in digitaler Form, ist herzlich aufgefordert, uns dazu
+		@Html.ActionLink("hier", "Contact", "Home", new { id = "1" }, null) zu kontaktieren.
+		<br />
+	</section>
+}
+
+
+

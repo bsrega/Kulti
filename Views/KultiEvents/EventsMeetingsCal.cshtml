@@ -1,0 +1,53 @@
+﻿
+@model List<Tuple<Mvc4_Kulti.Events, string>>
+
+<div style="height: 15em; overflow: auto;" class="scroll">
+
+<table style="width: 100%; table-layout: fixed;">
+  
+  @if (Model == null)
+  {
+    <tr>
+      <td colspan="2">keine Sitzungen etc. sind geplant</td>
+    </tr>
+  }
+  else
+  {
+    foreach (var t in Model)
+    {
+      <tr>
+        <td colspan="2">
+          <div class="title">
+            @Html.DisplayFor(modelItem => t.Item1.EvTitle)
+          </div>
+          <div>
+            @Html.Raw(FromTo(t.Item1.EvStartDate ?? DateTime.MinValue, t.Item1.EvEndDate ?? DateTime.MinValue))
+            @Html.DisplayFor(modelItem => t.Item2)
+          </div>
+          <div>
+            @Html.Raw(t.Item1.EvText)
+          </div>
+        </td>
+      </tr>
+      <tr><td colspan="2"><hr/></td></tr>
+    }
+  }
+</table>
+
+</div>
+@functions{
+
+   public string FromTo(DateTime fromDate, DateTime toDate)
+   {
+     if (fromDate.DayOfWeek == toDate.DayOfWeek)
+     {
+       return (fromDate.ToString("dddd") + " " + fromDate.ToString("dd/MM")
+         + " " + fromDate.ToString("HH:mm") + " - " + toDate.ToString("HH:mm"));
+     }
+
+     return (
+       fromDate.ToString("dddd") + " " + fromDate.ToString("dd/MM") + " " + fromDate.ToString("HH:mm") + " - " + toDate.ToString("dddd HH:mm")
+       );
+   }
+
+}

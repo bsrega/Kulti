@@ -1,0 +1,50 @@
+﻿<style>
+  	#calendar {
+		width: 120em;
+		margin: 0 auto;
+		}
+</style>
+
+@section CalendarScripts
+{
+  <link href="../../Scripts/fullcalendar/fullcalendar.css" rel="stylesheet" />
+  <script src="../../Scripts/fullcalendar/fullcalendar.js"></script>
+}
+
+@{
+    ViewBag.Title = "Calendar";
+}
+
+<h2>Calendar</h2>
+<script>
+
+  $(document).ready(function () {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+          events:  '/KultiEvents/CalendarJson',
+          monthNames: [ "Januar", "Februar", "März", "April", "Mai", "Juni",
+          "Juli", "August", "September", "Oktober", "November", "Dezember" ],
+          dayNames: [ 'Sonntag','Montag','Dienstag','Mittwoch',
+          'Donnerstag','Freitag','Samstag' ],
+          dayNamesShort: [ 'Mon','Di','Mi','Do', 'Fr','Sa','So' ],
+          txt_noEvents: "Keine Events in dieser Periode",
+          txt_SpecificEvents_prev: "",
+          txt_SpecificEvents_after: "eventos:",
+          txt_next: "später",
+          txt_prev: "früher",
+          txt_NextEvents: "Próximos eventos:",
+          txt_GoToEventUrl: "go to Event",
+         
+         txt_today: "Heute",
+
+
+    });
+
+  });
+
+
+</script>
+
+<div id="calendar"></div>

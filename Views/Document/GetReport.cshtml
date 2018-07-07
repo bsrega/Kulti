@@ -1,0 +1,16 @@
+﻿@model Mvc4_Kulti.ViewModels.DocumentSingleViewModel
+
+@{
+    ViewBag.Title = "getReport";
+}
+
+<h3>Protokoll zum Anschauen / Speichern</h3>
+<br/>
+ @if (Model != null)
+ {
+   @Html.ActionLink(Model.Doc.Title, "ViewDoc", new { id = Model.Doc.DocId }, new { target = "_blank" })
+ }
+ else
+ {
+   <div>Fehler beim Abruf des Protokolls, ev. wurde es gelöscht</div>
+ }

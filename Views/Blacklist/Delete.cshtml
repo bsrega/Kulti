@@ -1,0 +1,63 @@
+﻿@model Mvc4_Kulti.Blacklist
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<h3>Diesen Eintrag löschen?</h3>
+<fieldset>
+    <legend>Blacklist</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Reason)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reason)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FromDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FromDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Zurück zur Liste", "List")
+    </p>
+}

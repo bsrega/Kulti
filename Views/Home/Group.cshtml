@@ -1,0 +1,83 @@
+﻿@model Mvc4_Kulti.ViewModels.GroupViewModel
+
+<table>
+  <tr>
+    <td style="width: 20em"><h2>@Model.GroupName</h2></td>
+    <td><input type="button" value="zurück" onClick="history.back();"><td>
+  </tr>
+</table>
+
+<img src="@sImg(Model.GroupType, Model.GroupName)" alt="logo" style="height:auto; width:60%;"/>
+<br/>
+
+@Html.Raw(Model.HtmlContent)
+
+@if (Model.Documents.Count > 0)
+{
+  <fieldset>
+    <legend>Dokumente</legend>
+    <ul>
+      @foreach (string v in Model.Documents)
+      {
+        <li>
+          <a href="@docUrl(v)" target="_new">
+            @v.Substring(@v.LastIndexOf("\\") + 1, @v.Length - (@v.LastIndexOf("\\") + 1))
+          </a>
+        </li>
+      }
+    </ul>
+  </fieldset>  
+}
+
+@section featured {
+  <section class="contact">
+    @if (Model.GroupType == "Kultur")
+    {
+      <header>
+        <h3>Generelle Info über die Kulturräume</h3>
+      </header>
+        <div>
+        Für die Nutzung des öffentlichen Raumes der Kulturfabrik, etwa ein Markt, ein Freiluft-Jonglagetreffen etc. 
+        ist der Trägerschaftsverein Ansprechspartner.
+        <br/>
+        Die Kulturräume der Kulturfabrik werden ausschliesslich von öffentlichen Vereinen gemietet und bespielt. 
+      </div>
+    }
+    else
+    {
+      <header>
+        <h3>Generelle Info über das Gewerbe</h3>
+      </header>
+      <div>
+        Die Kulturfabrik umfasst neben dem öffentlichen Veranstaltungstrakt in den "privaten" hinteren Gebäudeteilen auch Gewerbe-, Wohn-, Atelier- und Musikräume.
+        <br/>
+        Diese Räume werden vom Trägerschaftsverein (Träve) an Einzelpersonen oder Gruppen vermietet.
+        <br/>
+        Frei werdende Räume werden per Inserat im A-Bulletin ausgeschrieben. Es wird auch eine Warteliste geführt. 
+        <br/>
+        Neu-MieterInnen müssen von der Vollversammlung gewählt werden.  
+      </div>
+    }
+    <div>
+      <h3>Info</h3>
+      Fragen?
+      Stelle sie uns <span style="background-color: white;"> @Html.ActionLink("hier", "Contact", "Home", new { id = "9" }, null)</span>
+      <br/>
+      Wir helfen dir gerne weiter!
+    </div>
+  </section>
+}
+
+@functions
+{
+  private string docUrl(string path)
+  {
+    string sName = path.Substring(path.LastIndexOf("\\"), path.Length - path.LastIndexOf("\\"));
+    return "/Groups/" + Model.GroupType + "/" + Model.GroupName + "" + sName;
+  }
+
+  private string sImg(string type, string name)
+  {
+    return "/Groups/" + type + "/" + name + "/logo.jpg";
+  }
+}

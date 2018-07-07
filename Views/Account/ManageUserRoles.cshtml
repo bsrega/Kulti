@@ -1,0 +1,43 @@
+﻿@model Mvc4_Kulti.ViewModels.ManageUserRolesViewModel
+@using MvcCheckBoxList.Model 
+
+<style>
+	#sidebar { display: none; }
+	#content { width: 90%; }
+</style>
+
+@{
+  ViewBag.Title = "Manage User '" + Model.UserName + "' Rollen";
+}
+<hgroup class="title">
+	<h3>@ViewBag.Title</h3>
+</hgroup>
+
+
+<p class="message-success">@Model.UpdateResult</p>
+
+<br />
+@using (Html.BeginForm("ManageUserRoles", "Account"))
+{
+  @Html.Hidden("UserName", Model.UserName)
+
+  var putCheckBoxesIntoUnorderedList =
+    new HtmlListInfo(HtmlTag.table, 2, new {width = "500"}, TextLayout.RightToLeft);
+
+  @Html.CheckBoxListFor(
+    x => x.AllRoles, 
+    x => x.AllRoles, 
+    x => x.ToString(),
+    x => x.ToString(),
+    x => x.UserHasRoles,
+    putCheckBoxesIntoUnorderedList
+   )
+<br />
+<br />
+<br />
+<input type="submit" value="Speichern" />
+}
+
+<div>
+	@Html.ActionLink("Back to List", "ListUsers")
+</div>

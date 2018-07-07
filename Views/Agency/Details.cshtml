@@ -1,0 +1,90 @@
+﻿@model Mvc4_Kulti.Agencies
+
+@{
+    ViewBag.Title = "Veranstalter - Detail";
+}
+
+<fieldset>
+    <legend>Veranstalter - Detail</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgenyGroupId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgenyGroupId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyStreet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyStreet)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyZip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyZip)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyCity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyCity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactPhone)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editieren", "Edit", new { id=Model.AgencyId }) |
+    @Html.ActionLink("zurück", "Index")
+</p>

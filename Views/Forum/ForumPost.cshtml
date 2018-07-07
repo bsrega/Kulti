@@ -1,0 +1,103 @@
+﻿@model Mvc4_Kulti.Forum
+@{ this.Layout = null; }
+
+<script type="text/javascript">
+
+  function ChkForm2() {
+    var frmOk2 = true;
+    // get form variables
+    var title2 = document.forms.frmpost.newTitle;
+    var msg2 = document.forms.frmpost.NewMsg;
+
+    title2.onfocus = function () {
+      title2.removeAttribute("style");
+      frmOk2 = true;
+    };
+
+    msg2.onfocus = function () {
+      msg2.removeAttribute("style");
+      msg2.setAttribute("style", "width: 300px; height: 40px;");
+      frmOk2 = true;
+    };
+
+    //check values
+    if (title2.value.length < 1) {
+      title2.setAttribute("style", "background-color: yellow;");
+      frmOk2 = false;
+    }
+
+    if (msg2.value.length < 1) {
+      msg2.setAttribute("style", "background-color: yellow; width: 300px; height: 40px;");
+      frmOk2 = false;
+    }
+
+    return frmOk2;
+  }
+
+</script>
+
+@using (Html.BeginForm("Create", "Forum", FormMethod.Post, new { id = "frmpost"}))
+{
+  @Html.HiddenFor(model => model.ForumId)
+  @Html.HiddenFor(model => model.UserName)
+  @Html.HiddenFor(model => model.TopicId) 
+  <table>
+    <tr>
+      <td style="width: 50%;">
+        <span style="font-weight:bold;">@Model.Title</span> 
+      </td>
+      <td>
+         von
+        <span style="font-weight:bold;">@Model.UserName</span>, <span>@Model.PostDate.Value.ToShortDateString()</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        @Html.Raw(Model.Msg)
+      </td>
+    </tr>
+  </table>
+	if (@ViewBag.isDeletable == "true")
+	{
+		<hr />
+		@Html.ActionLink("Beitrag löschen", "DeleteOwnPost", "Forum", new { id = Model.ForumId }, new
+		   { @class = "linkBtn", onclick = "return confirm('diesen Beitrag löschen ?')" })
+	}
+  <hr/>
+
+  <table>
+    <tr>
+      <td colspan="2">
+        <strong>Antworten</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Titel
+      </td>
+      <td>
+        @Html.TextBox("newTitle", "")
+      </td>      
+    </tr>
+    <tr>
+      <td>
+        Msg
+      </td>
+      <td>
+        @Html.TextArea("NewMsg", new { style = "width: 300px; height: 160px;" })
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="submit" value="Senden" onclick="return ChkForm2();" />
+      </td>
+    </tr>
+  </table>
+}
+
+
+
+
+
+
+

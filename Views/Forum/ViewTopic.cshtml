@@ -1,0 +1,189 @@
+﻿@model IEnumerable<Mvc4_Kulti.Forum>
+
+@{
+  ViewBag.Title = "Index";
+}
+
+<link href="../../Content/jquery.treeview.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery.treeview.min.js" type="text/javascript"></script>
+<style>
+  #trv  { font-size: 90%; }
+  #frmPostNew { float: left; }
+  #mainTbl tr:nth-child(2) { width: 20%; }
+  #sidebar { display: none; visibility: hidden;}
+  #content { width: 90%; }
+  div.ForumPost a:hover { color:#0000ff; }
+  div.ForumPost { cursor: pointer; }
+</style>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    var par = $("#frmPostNew");
+
+    $(".ForumPost").click(function () {
+      $("#rsvpmsg").show();
+      $(par).hide();
+      var id = this.id;
+      $.ajax({
+        url: "/Forum/PartialView",
+        data: { data: id },
+        success: function (mydata) {
+          $("#rsvpmsg").empty().append(mydata);
+        },
+        type: "GET"
+      });
+      return false;
+    });
+
+    $(par).hide();
+
+    // toggles the slickbox
+    $("#toggleFrm").click(function () {
+      var par2 = $("#rsvpmsg");
+      $(par2).hide();
+      $(par).toggle(400);
+    });
+
+    //make alignment-right possible
+    var ek = $("#mainTbl tr:eq(2)").find("td:first");
+    ek.removeAttr();
+    ek.css("width", "90%");
+
+  });
+
+  function ChkForm() {
+    var frmOk = true;
+
+    var title = document.forms.frmPostNew.newTitle;
+    var msg = document.forms.frmPostNew.NewMsg;
+    
+    title.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    msg.onfocus = function () {
+      this.removeAttribute("style");
+      this.setAttribute("style", "width: 300px; height: 40px;");
+      this.value = "";
+      frmOk = true;
+    };
+
+    //check values
+    if (title.value == '') {
+      title.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (msg.value == '') {
+      msg.setAttribute("style", "background-color: yellow; width: 300px; height: 40px;");
+      frmOk = false;
+    }
+
+    return frmOk;
+  }
+  
+</script>
+
+<table style="width: 100%; padding-bottom: 5px; margin-bottom: 10px; border-bottom: 1px solid black;">
+  <tr>
+    <td><div class="title">Forum zum Thema <span style="color: red;">@ViewBag.topicName</span></div></td>
+    <td>
+     <button id="toggleFrm">Neuer Thread starten</button>
+    </td>
+  </tr>
+  @if (@TempData["PostMsg"] != null)
+  {
+    <tr>
+      <td colspan="2">
+        <div class="message-success">@TempData["PostMsg"].ToString()</div>
+      </td>
+    </tr>
+  }
+</table>
+
+  <table style="width: 100%;">
+    <tr>
+      <td style="width: 50%;">
+      <div id="trv" style="height: 500px; overflow: auto;">
+        @ForumPosts(Model, null)
+      </div>
+      </td>
+      <td>
+        <div id="frmPostNew">
+            @using (Html.BeginForm("Create", "Forum", FormMethod.Post, new { id = "frmPostNew" }))
+            {
+              @Html.Hidden("topicId", (object)ViewBag.topicId)
+              @Html.Hidden("topicName", (object)ViewBag.topicName)
+              <table>
+              <tr>
+                <td colspan="2" style="font-weight: bold;">Neuer Thread</td>
+              </tr>
+              <tr>
+                <td>Titel</td>
+                <td>@Html.TextBox("newTitle", "")</td>      
+              </tr>
+              <tr>
+                <td>
+                  Msg
+                </td>
+                <td>@Html.TextArea("NewMsg", new { style = "width: 300px; height: 160px;" })</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="submit" value="Senden" onclick="return ChkForm();" />
+                </td>
+              </tr>
+            </table>
+            }
+        </div>
+        <div id="rsvpmsg">
+        </div>
+      </td>
+  </tr>
+</table>
+
+
+@helper ForumPosts(IEnumerable<Mvc4_Kulti.Forum> nodes, int? parentId)
+  {
+    if (nodes.Any(n => n.ParentId == parentId))
+    { 
+    <ul id="tree_root" class="ForumPost">
+      @foreach (var node in nodes.Where(n => n.ParentId == parentId))
+      {
+        <li>
+          <div id="@node.ForumId" class="ForumPost">
+            <a>
+              @getTitle(node.Title)
+            </a>
+            @if (@node.PostDate > @DateTime.Now.AddDays(-1.5))
+            { <span style="color: red; font-weight: bold; font-size: 0.7em;">&nbsp;&nbsp;(neu)</span> } 
+            @ForumPosts(nodes, node.ForumId)  
+          </div>
+        </li>
+      }
+    </ul>
+    }
+} 
+
+@functions
+{
+  public string getTitle(string sTitle)
+  {
+    if (sTitle.Length > 25)
+    {
+      return sTitle.Substring(0, 24) + "..";
+    }
+    else
+    {
+      return sTitle;
+    }
+  }
+}
+
+
+
+

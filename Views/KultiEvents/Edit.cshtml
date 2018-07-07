@@ -1,0 +1,340 @@
+﻿@using Mvc4_Kulti
+@model Mvc4_Kulti.ViewModels.EditEventViewModel
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+<script src="~/Scripts/ckeditor/config.js"></script>
+<script src="~/Scripts/ckeditor/styles.js"></script>
+<script src="~/Scripts/jquery-ui-timepicker-addon.js"></script>
+<link href="~/Content/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+
+<script type="text/javascript">
+  function openImg(url) {
+    window.open(url, "_blank", "toolbar=no, location=no, directories=no, " +
+        "status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=yes, width=400, height=400");
+  }
+</script>
+
+<style type="text/css">
+  #sidebar { display: none; }
+</style>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    $('#CEvents_EvStartDate').datetimepicker(
+      {
+        dateFormat: 'dd.mm.yy',
+        timeFormat: 'HH:mm',
+        stepHour: 1,
+        stepMinute: 15
+      });
+
+    $('#CEvents_EvEndDate').datetimepicker(
+      {
+        dateFormat: 'dd.mm.yy',
+        timeFormat: 'HH:mm',
+        stepHour: 1,
+        stepMinute: 15
+      });
+
+
+    CKEDITOR.replace('CEvents_EvText', {
+      height: 250,
+      width: 400,
+      toolbarGroups: [
+        { "name": "basicstyles", "groups": ["basicstyles"] },
+        { "name": "links", "groups": ["links"] },
+        { "name": "paragraph", "groups": ["list", "blocks"] },
+        { "name": "clipboard", "groups": ["mode"] },
+        { "name": "document", "groups": ["mode"] },
+        { "name": "styles", "groups": ["styles"] }
+      ],
+
+      // Remove the redundant buttons from toolbar groups defined above.
+      removeButtons: 'Print,NewPage,Save,Templates,Cut,Copy,PasteText,' +
+        'PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,' +
+        'Button,HiddenField,Radio,TextField,Textarea,Select,Subscript,Superscript,' +
+        'RemoveFormat,NumberedList,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,' +
+        'JustifyRight,JustifyBlock,Language,Anchor,Table,HorizontalRule,Smiley,' +
+        'SpecialChar,PageBreak,Iframe,About'
+
+    });
+
+  });
+
+  function checkForm() {
+    var corrected = false;
+    var frmOk = true;
+    // get form variables
+    var title = document.getElementById("CEvents_EvTitle");
+    var evStart = document.getElementById("CEvents_EvStartDate");
+    var evEnd = document.getElementById("CEvents_EvEndDate");
+    var evGroup = document.getElementById("SelectedGroupValue");
+
+    title.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    evStart.onfocus = function () {
+      this.removeAttribute("style");
+      frmOk = true;
+    };
+
+    evEnd.onfocus = function () {
+      this.removeAttribute("style");
+      frmOk = true;
+    };
+
+    evGroup.onfocus = function () {
+      this.removeAttribute("style");
+      frmOk = true;
+    };
+
+    if (title.value.length < 5) {
+      title.value = "Titel erforderlich";
+      title.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (evStart.value.length < 5) {
+      evStart.value = "Datum erforderlich";
+      evStart.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (evEnd.value.length < 5) {
+      evEnd.value = "Datum erforderlich";
+      evEnd.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (evGroup.value == "") {
+      evGroup.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    return frmOk;
+  }
+
+</script>
+
+@{
+  HtmlHelper.ClientValidationEnabled = false;
+}
+
+@*@using (Html.BeginForm("Edit", "KultiEvents", FormMethod.Post, 
+                  new { enctype = "multipart/form-data", id = "thisform", onsubmit = "return checkForm();" }))*@
+                  
+                  
+@using (Html.BeginForm("Edit", "KultiEvents", FormMethod.Post, 
+                  new { enctype = "multipart/form-data", id = "thisform" }))
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Event editieren</legend>
+    
+    @Html.HiddenFor(model => model.CEvents.EventId)
+    @Html.HiddenFor(model => model.CEvents.EvImgPath1)
+    <div style="height: 35em; overflow: auto; padding: 10px;">
+
+    <table style="border-spacing: 10px;">
+      <tr>
+        <td>
+          @Html.Label("Titel")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.CEvents.EvTitle)
+          @Html.ValidationMessageFor(model => model.CEvents.EvTitle)
+        </td>        
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Start")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.CEvents.EvStartDate)
+          @Html.ValidationMessageFor(model => model.CEvents.EvStartDate)
+        </td>        
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Ende")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.CEvents.EvEndDate)
+          @Html.ValidationMessageFor(model => model.CEvents.EvEndDate)
+        </td>        
+      </tr>     
+      <tr>
+        <td>
+          @Html.Label("Text des Events")
+        </td>
+        <td>
+          @Html.TextAreaFor(model => model.CEvents.EvText)
+          @Html.ValidationMessageFor(model => model.CEvents.EvText)
+        </td>        
+      </tr>
+      <tr>
+        <td>@Html.Label("Bild") click for View</td>
+        <td>
+          <div style="cursor: pointer;" onclick="openImg('@ImgFile(@Model.CEvents.EvImgPath1)');">
+            <img src="@ImgFile(@Model.CEvents.EvImgPath1)" alt="Image of event" width="30" />
+          </div>
+        </td>
+      </tr>  
+      <tr>
+        <td>
+          @Html.Label("Bild ändern")
+        </td>
+        <td>
+          <input type="file" id="img" name="img" />
+        </td>        
+      </tr>     
+      <tr>
+        <td style="vertical-align: top;">@Html.Label("Lokalitäten")</td>
+        <td>
+          <div style="height: 8em; overflow: auto">
+            <table>
+              @foreach (var item in Model.EventLocations)
+              {
+                <tr>
+                  <td>@item.Item1</td>
+                  <td>
+                    @if (item.Item3 == false)
+                    { <input type="checkbox" name="lstLoc" value="@item.Item2" /> }
+                    else
+                    { <input type="checkbox" name="lstLoc" value="@item.Item2" checked="checked" /> }                
+                  </td>
+                </tr>
+              }
+            </table>
+         </div>
+        </td>       
+      </tr> 
+      <tr>
+        <td style="vertical-align: top;">@Html.Label("Dokumente")</td>
+        <td>
+          @if (Model.Docs.Count == 0)
+          {
+            @Html.Raw("keine Dokumente vorhanden")
+          }
+          else
+          {
+            <ul>  
+              @foreach (Documents itemDoc in Model.Docs)
+              {
+                <li>
+                  @Html.ActionLink(itemDoc.Title, "ViewDoc", "Document", new {id = @itemDoc.DocId}, new {target = "_blank"})
+                </li>
+              } 
+            </ul>
+          }
+        </td>
+      </tr>     
+      <tr>
+        <td>
+          @Html.Label("Status")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedStatusValue, Model.Status.ToList())
+          @Html.ValidationMessageFor(model => model.CEvents.EvStatus)
+        </td>        
+      </tr>     
+      <tr>
+        <td>
+          @Html.Label("Typ")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedTypeValue, Model.Type.ToList())
+          @Html.ValidationMessageFor(model => model.CEvents.EvType)
+        </td>        
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Grösse")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedSizeValue, Model.Size.ToList())
+          @Html.ValidationMessageFor(model => model.CEvents.EvSize)
+        </td>        
+      </tr>      
+      <tr>
+        <td>
+          @Html.Label("Gruppe")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedGroupValue, Model.Group.ToList())
+          @Html.ValidationMessageFor(model => model.CEvents.EvGroupId)
+        </td>        
+      </tr>
+      
+      <tr>
+        <td>
+          @Html.Label("Agentur / Veranstalter")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedAgencyValue, Model.Agency.ToList())
+          @Html.ValidationMessageFor(model => model.CEvents.EvGroupId)
+        </td>        
+      </tr>
+      
+      <tr>
+          <td>@Html.Label("Götti / interne Infos")</td>
+          <td>
+            @Html.TextAreaFor(model => model.CEvents.EvInterInfo, new {cols = 3, @rows = 2, @style = "width: 300px; height: 30px"})
+          </td>
+        </tr>
+      
+      <tr>
+        <td>@Html.Label("Verantwortlicher")</td>
+        <td>
+          @Html.TextAreaFor(model => model.CEvents.EvResponsible, new { cols = 3, @rows = 2, @style = "width: 300px; height: 40px" })
+          @*@Html.ValidationMessageFor(model => model.CEvents.EvGroupId)*@
+        </td>
+      </tr>
+       
+      <tr>
+      </tr>    
+      <tr>
+        <td>
+          @Html.Label("Eintritt")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.CEvents.EvAdmission)
+          @Html.ValidationMessageFor(model => model.CEvents.EvAdmission)
+        </td>        
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" value="Speichern" id="btnSave" onclick="return checkForm();"  />
+        </td>
+        <td>
+        </td>        
+      </tr>
+    </table>
+    </div>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Zurück zur Liste", "Index")
+</div>
+
+@functions{
+  public string ImgFile(string path)
+  {
+    try
+    {
+      string filename = path.Split('\\').Last();
+      return "/Images/Events/" + filename;
+    }
+    catch
+    {
+      return "";
+    }
+  }
+}
+

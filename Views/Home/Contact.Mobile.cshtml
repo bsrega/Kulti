@@ -1,0 +1,124 @@
+﻿<script src="~/Scripts/jquery.validate.min.js"></script>
+@model Mvc4_Kulti.Models.Cotcha
+@{
+  ViewBag.Title = "Kulti kontaktieren";
+}
+
+<script>
+
+    $(document).ready(function () {
+        $("#frm").validate({
+            rules: {
+                subject: { required: true },
+                titel: { required: true },
+                Name: { required: true },
+                contact: { required: true },
+                Msg: { required: true, minlength: 20 },
+                Result: { required: true, number: true }
+            },
+            messages: {
+                subject: { required: "Thema angeben" },
+                titel: { required: "Titel angeben" },
+                Name: { required: "Name angeben" },
+                contact: { required: "Kontakt angeben" },
+                Msg: { required: "Nachricht angeben" },
+                Result: { required: "Rechnung lösen" }
+            },
+            errorPlacement: function (error, element) {
+                if (element.attr("id") == "Msg") { 
+                    error.insertBefore(element);
+                }
+                else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+    });
+
+    function postFrm() {
+        var returnVal = false;
+        var operator = document.getElementById("operator").innerHTML;
+        var int1 = parseInt(document.getElementById("nbr1").innerHTML);
+        var int2 = parseInt(document.getElementById("nbr2").innerHTML);
+        var result = document.getElementById("Result").value;
+
+        if (operator == "-") {
+            if (int1 - int2 == result) {
+                returnVal = true;
+            }
+        } else {
+            if ((int1 + int2) == result) {
+                returnVal = true;
+            }
+        }
+        if (returnVal == false) {
+            $("#Result").val("");
+        }
+        return returnVal;
+    }
+
+</script>
+
+
+<h4>@ViewBag.Message</h4>
+
+@if (ViewBag.Showform == "true")
+{
+    using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { id = "frm" }))
+    {
+    <div data-role="collapsible">
+        <h3>@ViewBag.Title</h3>
+        @ViewBag.Message
+        <label for="Name">Thema:</label>
+        @Html.DropDownList("subject")
+        <label for="Name">Dein Name:</label>
+        @Html.TextBox("Name")
+        <label for="contact">Email / Tel-Nr.:</label>
+        @Html.TextBox("contact")
+        <label for="Titel">Titel:</label>
+        @Html.TextBox("titel")
+        <label for="Titel">Nachricht:</label>
+        @Html.TextArea("Msg")
+        <span id="nbr1">@Html.Raw(Model.Number1)</span>
+        <span id="operator">@Html.Raw(Model.Task)</span>
+        <span id="nbr2">@Html.Raw(Model.Number2) =</span>
+        @Html.TextBoxFor(e => e.Result, new { onblur = "return postFrm();" })
+        <hr />
+        <div style="display: none;">
+            <input type="text" name="Number1" value="@Model.Number1.ToString()" />
+            <input type="text" name="Number2" value="@Model.Number2.ToString()" />
+            <input type="text" name="Task" value="@Model.Task" />
+        </div>
+        <input type="submit" class="fc-button" value="Nachricht senden" id="btnSave" />
+    </div>
+    }
+}
+
+@section featured {
+
+    <div data-role="collapsible">
+        <h4>Info</h4>
+        <section class="contact">
+            <header>
+                <h3>Email</h3>
+            </header>
+            <p>
+                <span><a href="mailto:info@kulturfabrik.ch">info@kulturfabrik.ch</a></span>
+            </p>
+        </section>
+        <section class="contact">
+            <header>
+                <h3>Adresse</h3>
+            </header>
+            <p>
+                Kulturfabrik Wetzikon
+                <br />
+                Zürcherstrasse 40/42
+                <br />
+                8620 Wetzikon
+            </p>
+        </section>
+
+    </div>
+}
+

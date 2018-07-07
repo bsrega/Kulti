@@ -1,0 +1,32 @@
+﻿@model Mvc4_Kulti.Forum
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<fieldset>
+  <legend>Diesen Eintrag löschen?</legend>
+  <table style="width: 80%;">
+    <tr>
+      <td>Titel</td>
+      <td>@Html.DisplayFor(model => model.Title)</td>
+    </tr>
+    <tr>
+      <td>Ersteller</td>
+      <td>@Html.DisplayFor(model => model.UserName)</td>
+    </tr>
+    <tr>
+      <td>Nachricht</td>
+      <td>@Html.Raw(Model.Msg)</td>
+    </tr>    
+  </table>
+</fieldset>
+
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("zurück", "IndexAdmin")
+    </p>
+}

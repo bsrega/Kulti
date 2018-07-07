@@ -1,0 +1,65 @@
+﻿@using Mvc4_Kulti.ViewModels
+@model List<Mvc4_Kulti.ViewModels.BlacklistViewModel>
+
+<p>
+  @Html.ActionLink("Create New", "Create")
+</p>
+
+<fieldset>
+  <legend>Blacklist</legend>
+  <table>
+    <tr>
+      <th>
+        @Html.Label("Vorname")
+      </th>
+      <th>
+        @Html.Label("Nachname")
+      </th>
+      <th>
+        @Html.Label("Von")
+      </th>
+      <th>
+        @Html.Label("Bis")
+      </th>
+      <th>
+        @Html.Label("Grund")
+      </th>
+      <th>
+        @Html.Label("Erfasst von")
+      </th>
+      <th>
+        @Html.Label("Bild")
+      </th>
+    </tr>
+    @foreach (BlacklistViewModel Item in Model)
+    {
+      <tr>
+        <td>@Item.FirstName</td>
+        <td>@Item.LastName</td>
+        <td>@Item.DateFrom.Value.ToShortDateString()</td>
+        <td>@Item.DateTo.Value.ToShortDateString()</td>
+        <td>@Item.Reason</td>
+        <td>@Item.CreatedBy</td>
+        <td><img src="@ImgFile(Item.Pk)" /></td>
+      </tr>
+    }
+
+  </table>
+</fieldset>
+
+@functions
+{
+
+  public string ImgFile(int path)
+  {
+    try
+    {
+      return "../Images/Blacklist/" + path.ToString() + ".jpg";
+    }
+    catch
+    {
+      return "";
+    }
+  }
+
+}

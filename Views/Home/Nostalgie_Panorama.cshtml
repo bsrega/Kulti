@@ -1,0 +1,183 @@
+﻿@model Mvc4_Kulti.ViewModels.NostalgieViewModel
+@{
+	ViewBag.Title = "Nostalgie";
+}
+
+
+<style>
+	#accordion {
+		width: 250px;
+	}
+
+	.Fdr {
+		cursor: pointer;
+		font-size: 8pt;
+	}
+</style>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+
+		$("#accordion").accordion({
+			active: false,
+			collapsible: true
+		});
+
+		$(".Fdr").click(function () {
+			$("#ImageGallery").empty();
+			$("#TopGallery").empty();
+			$("#pano").empty();
+			var f = $(this).attr("FldName");
+			var id = $(this).attr("id");
+			var path = "/Groups/Nostalgie/" + id + "/" + f;
+			// razor: (HttpContext.Current.Request.QueryString["t"] == "/Groups/Nostalgie/2015/Panorama")
+			if (path == "/Groups/Nostalgie/2015/Panorama") {
+				@RenderSection("PanoramaHeader", required: false)
+				@RenderSection("PanoramaDiv", required: false)
+			}
+			else {
+				$.ajax({
+				url: "/Home/ViewFolder",
+				data: { name: f, year: id },
+				type: "GET",
+				dataType: "json",
+				contentType: "application/json",
+				cache: false,
+					success: function (data) {
+					$("#ImageGallery").empty();
+					$("#TopGallery").empty();
+					$.each(data, function (i, item) {
+						switch (item.substr(item.length - 3, 3).toLowerCase()) {
+							case "jpg":
+								var r = $("<img />").attr({
+									"src": (path + "/" + item),
+									"style": "width: 100px; height: auto; padding: 2px;"
+								});
+								$("<a>").attr({
+									href: (path + "/" + item),
+									rel: "widget"
+								}).html(r).addClass("fancybox").appendTo("#ImageGallery");
+								break;
+							case "mp3":
+								$("<audio></audio>").attr({
+									controls: 'controls',
+									src: (path + "/" + item),
+									style: "width: 300px;height:30px;",
+									title: item
+								}).appendTo("#TopGallery").after("<div>" + item + "</div>");
+								break;
+							case "mp4":
+								$("<video></video>").attr({
+									'src': (path + "/" + item),
+									controls: 'controls',
+									type: 'video/mp4'
+								}).appendTo("#TopGallery");
+								break;
+							default:
+								$("#TopGallery").append("<div id='txtDiv'>" + item + "</div>");
+								break;
+						}
+					});
+
+					$(".fancybox").fancybox(
+						{
+							fitToView: true,
+							autoSize: false,
+							width: 650,
+							height: 520
+						}
+					);
+				}
+				}); //$.ajax
+			}
+
+			return false;
+
+		});  //$(".Fdr").click
+
+		//function displayPanam() {
+		//	$("#ImageGallery").empty();
+		//	$("#TopGallery").empty();
+		//	$("#pano").css("display", "inline-block");
+		//	//add header
+		//	//<script src="pano.js">
+		//	//
+		//	//
+		//	//embedpano({ swf: "pano.swf", xml: "pano.xml", target: "pano", html5: "prefer", passQueryParameters: true });
+		//	//alert("ok");
+		//};
+
+
+	});  //$(document).ready
+
+</script>
+<fieldset class="ui-widget ui-widget-content">
+	<legend class="ui-widget-header ui-corner-all"><span id="newTitle">@ViewBag.Title</span></legend>
+	<div>
+		<table style="width: 100%;">
+			<tr>
+				<td>
+					<div id="accordion">
+						@foreach (var e in Model.ClsNos.SubFolders)
+						{
+						<h3>@e.FolderName</h3>
+						<div>
+							<ul>
+								@foreach (var w in e.SubFolders)
+									{
+									<li class="Fdr" id="@e.FolderName" FldName="@w.FolderName">
+										@w.FolderName
+									</li>
+									}
+							</ul>
+						</div>
+						}
+					</div>
+				</td>
+				<td>
+					@section PanoramaDiv{
+						<div id="pano" style="visibility:hidden;">
+							<noscript>
+								<table style="width:100%;height:100%;">
+									<tr style="vertical-align:middle;">
+										<td>
+											<div style="text-align:center;">ERROR:<br /><br />Javascript not activated<br /><br /></div>
+										</td>
+									</tr>
+								</table>
+							</noscript>
+							<script>
+								embedpano({ swf: "pano.swf", xml: "pano.xml", target: "pano", html5: "prefer", passQueryParameters: true });
+							</script>
+						</div>
+					}
+					<div id="TopGallery"></div>
+					<div id="ImageGallery"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</fieldset>
+
+@section featured {
+	<section class="contact">
+		<header>
+			<h3>Unsere Vergangenheit..</h3>
+		</header>
+		Die Kulti sieht sich als langfristiges Projekt.
+		<br />
+		In diesem Zusammenhang ist es wichtig und interessant, lange Entwicklungsphasen zu überblicken, um sie nachvollziehen und verstehen zu können.
+		<br />
+		Ausserdem macht es Spass:
+		<br />
+		Ältere schwelgen im "Weisst Du noch?" - Jüngere können das Damals entdecken und es mit dem Heute vergleichen...
+		<br />
+		Das vorliegende Archivmaterial ist bis jetzt unvollständig und wird laufend ergänzt.
+		<br />
+		Wer also noch Interessantes beisteuern kann und möchte, am Besten in digitaler Form, ist herzlich aufgefordert, uns dazu
+		@Html.ActionLink("hier", "Contact", "Home", new { id = "1" }, null) zu kontaktieren.
+		<br />
+	</section>
+}
+

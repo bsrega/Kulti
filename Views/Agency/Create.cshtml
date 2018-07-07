@@ -1,0 +1,109 @@
+﻿@model Mvc4_Kulti.Agencies
+
+@{ ViewBag.Title = "Veranstalter erstellen"; }
+
+<style>
+  #sidebar { display: none; visibility: hidden; }
+  #content { width: 90%; }
+</style>
+
+@using (Html.BeginForm())
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Veranstalter erstellen</legend>
+
+    <div class="editor-label">
+      @Html.Label("Name Veranstalter / Agentur")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.AgencyName)
+      @Html.ValidationMessageFor(model => model.AgencyName)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Email Veranstalter / Agentur")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.AgencyEmail)
+      @Html.ValidationMessageFor(model => model.AgencyEmail)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Telefon Veranstalter / Agentur")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.AgencyPhone)
+      @Html.ValidationMessageFor(model => model.AgencyPhone)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Strasse")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.AgencyStreet)
+      @Html.ValidationMessageFor(model => model.AgencyStreet)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Postleitzahl")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.AgencyZip)
+      @Html.ValidationMessageFor(model => model.AgencyZip)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Ort")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.AgencyCity)
+      @Html.ValidationMessageFor(model => model.AgencyCity)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Vorname Kontaktperson")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.ContactFirstName)
+      @Html.ValidationMessageFor(model => model.ContactFirstName)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Nachname Kontaktperson")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.ContactLastName)
+      @Html.ValidationMessageFor(model => model.ContactLastName)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Email Kontaktperson")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.ContactEmail)
+      @Html.ValidationMessageFor(model => model.ContactEmail)
+    </div>
+
+    <div class="editor-label">
+      @Html.Label("Telefon Kontaktperson")
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.ContactPhone)
+      @Html.ValidationMessageFor(model => model.ContactPhone)
+    </div>
+
+    <div style="text-align: center; padding: 10px; border-top: 1px solid black;">
+      <input type="submit" value="Erstellen" />
+    </div>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("zurück", "Index")
+</div>
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+}

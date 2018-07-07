@@ -1,0 +1,258 @@
+﻿@model Mvc4_Kulti.ViewModels.DocumentViewModel
+
+<link href="../../Images/TableSort/style.css" rel="stylesheet" type="text/css" />
+<script src="../../Content/themes/jquery.tablesorter.min.js" type="text/javascript"></script>
+
+<style>
+  #sidebar { display: none; visibility: hidden; }
+  #content { width: 90%; }
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+  $("#SortTable")
+    .tablesorter({
+      dateFormat: "ddmmyyyy",
+      widgets: ['zebra'],
+      cssAsc: "headerSortUp",
+      cssDesc: "headerSortDown",
+      cssHeader: "header"
+    });
+
+    $("#filterRow").change(function () {
+      var sFilter = $('#filterRow').find(":selected").text();
+      //clear previous filter
+      var r = $('#SortTable tbody tr').filter(function () {
+        return $.trim($(this).find('td'))
+      }).show();
+      //add new filter
+      if (sFilter != "Select") {
+        var $rowsNo = $('#SortTable tbody tr').filter(function () {
+          return $.trim($(this).find('td').eq(1).text()) != sFilter
+        }).hide();
+      }
+    });
+
+
+    $('#searchTerm').mouseover(function () {
+      $(this).attr("title", $("#ttip").text());
+    });
+
+    //make alignment-right possible
+    var ek = $("#mainTbl tr:eq(2)").find("td:first");
+    ek.removeAttr();
+    ek.css("width", "90%");
+
+  });
+</script>
+
+
+<fieldset>
+ 
+  <legend>Dokumente</legend>
+
+  @if (@TempData["WrongType"] != null)
+  {
+    <div class="message-error">@TempData["WrongType"].ToString()</div>
+  }
+  
+  @if (@TempData["Success"] != null)
+  {
+    <div class="message-success">@TempData["Success"].ToString()</div>
+  }
+  
+  @if (ViewBag.NotAllowed != null)
+  {
+    <div class="message-error">@ViewBag.NotAllowed</div>
+  }
+  
+  <p>
+    @Html.ActionLink("Erstellen", "Create", "Document") | 
+    @Html.ActionLink("Alle anzeigen", "ListAll", "Document", new { getAll = "true" }, null) |  Filter Gruppe 
+    <select id="filterRow">
+      <option>Select</option>
+      <option>Halle</option>
+      <option>KoKo</option>
+      <option>Beiz</option>
+      <option>Mieter</option>
+      <option>Träve</option>
+      <option>Verwaltung</option>
+      <option>Stiftung</option>
+  </select>
+  </p>
+
+  @using (Html.BeginForm("search", "Lucene", FormMethod.Get))
+  {
+    <fieldset style="margin: 15px;">
+      <legend>Dokumente durchsuchen</legend>
+      <span>
+        @Html.TextBox("searchTerm")        
+      </span>
+      <div id="ttip" style="display: none">
+        <strong>'hund -katze'</strong> findet alle Dokumente mit Wort 'hund' aber ohne Wort 'katze'"    
+      </div>
+      <span>
+        <span><input type="submit" value="Suche" /></span>
+      </span>     
+    </fieldset>
+  }
+  
+    
+  <div style="font-weight: bold;">@Html.Raw(ViewBag.Message)</div>
+  
+  <div style="height: 400px; overflow: auto;">
+    <table id="SortTable" class="tablesorter">
+      <thead>
+        <tr>
+          <td><strong>Titel</strong></td>
+          <td><strong>Gruppe</strong></td>
+          <td><strong>Datum</strong></td>
+          <td><strong>Typ</strong></td>
+          <td><strong>Status</strong></td>
+          <td><strong>Öffentlich</strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        @if (Model != null)
+        {
+          foreach (var item in Model.Docs.Select((model, index) => new { index, model }))
+          {
+            <tr>
+              <td>
+                @Html.ActionLink(@item.model.Title, "ViewDoc", new { id = item.model.DocId }, new { target = "_blank" })
+              </td>
+              <td>
+                @DocGroupName(item.model.GroupId ?? 0)
+              </td>
+              <td>@item.model.CreateDate.ToShortDateString()</td>
+              <td>
+                @DocType(item.model.Type ?? 0)
+              </td>
+              <td>
+                @DocStatus(item.model.Status ?? 0)
+              </td>
+              <td>
+                @item.model.isPublic
+              </td>
+              <td><img src="@ImgFile(item.model.FileExtension)" width="20" alt="" /></td>
+              <td>
+                @Html.ActionLink("Details", "Details", new { id = item.model.DocId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.model.DocId }) |
+                @if (User.Identity.Name.ToLower() == "schuefi" || User.Identity.Name.ToLower() == "stephan")
+                {
+                  @Html.ActionLink("Delete", "Delete", new { id = item.model.DocId })
+                }
+              </td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+</fieldset>
+
+@functions{
+
+  public string ImgFile(string typ)
+  {
+    switch (typ.ToLower())
+    {
+      case ".doc":
+        return "../Images/docTypes/doc.png";
+        break;
+      case ".pdf":
+        return "../Images/docTypes/pdf.png";
+        break;
+      case ".txt":
+        return "../Images/docTypes/txt.png";
+        break;
+      case ".xls":
+        return "../Images/docTypes/xls.png";
+        break;
+      case "default":
+        return "";
+        break;
+    }
+    return "";
+  }
+
+  public string DocType(int id)
+  {
+    string docType = string.Empty;
+    switch (id)
+    {
+      case 4:
+        docType = "Reglement";
+        break;
+      case 5:
+        docType = "Protokoll";
+        break;
+      case 6:
+        docType = "Vertrag";
+        break;
+      case 7:
+        docType = "Allgemein";
+        break;
+      default:
+        docType = "??";
+        break;
+    }
+    return docType;
+  }
+
+  public string DocStatus(int id)
+  {
+    string docStatus = string.Empty;
+    switch (id)
+    {
+      case 1:
+        docStatus = "Draft";
+        break;
+      case 2:
+        docStatus = "Release";
+        break;
+      case 3:
+        docStatus = "Privat";
+        break;
+      default:
+        docStatus = "??";
+        break;
+    }
+    return docStatus;
+  }
+
+  public string DocGroupName(int id)
+  {
+    string GroupName = string.Empty;
+    switch (id)
+    {
+      case 8:
+        GroupName = "Halle";
+        break;
+      case 9:
+        GroupName = "Beiz";
+        break;
+      case 10:
+        GroupName = "Mieter";
+        break;
+      case 11:
+        GroupName = "KoKo";
+        break;
+      case 12:
+        GroupName = "Träve";
+        break;
+      case 33:
+        GroupName = "Verwaltung";
+        break;
+      case 32:
+        GroupName = "Stiftung";
+        break;
+      default:
+        GroupName = "??";
+        break;
+    }
+    return GroupName;
+  }
+
+}

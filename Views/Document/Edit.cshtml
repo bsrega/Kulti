@@ -1,0 +1,118 @@
+﻿<style>
+   #sidebar { display: none; }
+   #content { width: 90%; }
+ </style>
+
+@model Mvc4_Kulti.ViewModels.DocumentEditViewModel
+<script type="text/javascript">
+
+  function ChkForm() {
+    var title = document.getElementById("Doc_Title");
+
+    if (title.value == '') {
+      alert('Der Titel muss min. 3 Buchstaben haben');
+      title.focus();
+      return false;
+    }
+   
+    return true;
+  }
+
+  $(document).ready(function () {
+
+    $("#Doc_PublishDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy'
+    });
+
+    $("#Doc_isPublic option").eq(0).text("Wählen");
+
+  });
+
+</script>
+
+@using (Html.BeginForm())
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Dokument editieren</legend>
+    @Html.HiddenFor(model => model.Doc.DocId)
+    <table>
+      <tr>
+        <td>
+          @Html.LabelFor(model => model.Doc.Title)
+        </td>
+        <td>
+          @Html.EditorFor(model => model.Doc.Title)
+          @Html.ValidationMessageFor(model => model.Doc.Title)          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Dokument ist öffentlich")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.Doc.isPublic)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Falls ja: Veröffentlichungsdatum")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.Doc.PublishDate)
+        </td>
+      </tr>            
+      <tr>
+        <td>
+          @Html.Label("Event")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedEventValue, Model.Events.ToList())
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          @Html.Label("Gruppe")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedGroupValue, Model.Group.ToList())
+        </td>
+      </tr>      
+       <tr>
+        <td>
+          @Html.LabelFor(model => model.Doc.Status)
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedStatusValue, Model.Status)
+        </td>
+      </tr>     
+      <tr>
+        <td>
+          @Html.LabelFor(model => model.Doc.Type)
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedTypeValue, Model.Type)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" value="Speichern" onclick="return ChkForm();" />
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Zurück zur Liste", "ListAll")
+</div>
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryui")
+  @Styles.Render("~/Content/themes/base/css")
+}

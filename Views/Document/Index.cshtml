@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Mvc4_Kulti.Documents>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+      @* <th>
+            @Html.DisplayNameFor(model => model.ParentId)
+        </th>
+        *@
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+          @*@Html.DisplayNameFor(model => model.CreateDate)*@
+          Erstellt
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </th>
+        <th>
+          @*@Html.DisplayNameFor(model => model.UserId)*@
+          Ersteller
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FilePath)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       @* <td>
+            @Html.DisplayFor(modelItem => item.ParentId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+   
+          @Html.ActionLink("open", "ViewDoc", new { id = item.DocId }, FormMethod.Get)
+         
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DocId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DocId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DocId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,33 @@
+﻿@using Mvc4_Kulti.Controllers
+@{
+  ViewBag.Title = "Index";
+  var tl = (List<ForumTopic>) ViewData["ForumTopicList"];
+}
+
+<style>
+  #sidebar { display: none; }
+</style>
+
+<div style="font-weight:bold;padding:5px;color:red;">Neu: Falls keine Antwort auf deine Posts erstellt wurden, kannst du sie nun selber wieder löschen!</div>
+<fieldset>
+  <legend>Forum</legend>
+  <table style="width: 60%;">
+    <tr style="font-weight: bold;">
+      <td>Thema</td>
+      <td>Anzahl Posts</td>
+      <td>Neuester Eintrag</td>
+      <td></td>
+    </tr>
+    @foreach (ForumTopic s in tl)
+    {
+      <tr>
+        <td>@s.Title</td>
+        <td>@s.PostsCount</td>
+        <td>@s.LatestPostDate</td>
+        <td>
+          @Html.ActionLink("Visit", "ViewTopic", new {topicId = s.Id, topicName = s.Title})
+        </td>
+      </tr>
+    }
+  </table>
+</fieldset>

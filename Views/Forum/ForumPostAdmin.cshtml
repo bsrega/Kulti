@@ -1,0 +1,27 @@
+﻿@model Mvc4_Kulti.Forum
+@{ this.Layout = null; }
+
+<table>
+  <tr>
+    <td style="width: 50%;">
+      <span style="font-weight:bold;">@Model.Title</span> 
+    </td>
+    <td>
+      von
+      <span style="font-weight:bold;">@Model.UserName</span>, <span>@Model.PostDate</span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      @Html.Raw(Model.Msg)
+    </td>
+  </tr>
+</table>
+<hr/>
+@Html.ActionLink("Löschen", "Delete", new { id=Model.ForumId })
+
+
+
+
+
+

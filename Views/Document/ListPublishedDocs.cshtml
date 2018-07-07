@@ -1,0 +1,22 @@
+﻿@using Mvc4_Kulti.Controllers
+@model IEnumerable<Mvc4_Kulti.Controllers.PublDocs>
+@{int Cntdocs = 0;}
+@foreach (var item in Model)
+{ Cntdocs += 1; }
+@if (Cntdocs > 0)
+{
+  <div style="height: 15em; overflow: auto;" class="scroll">
+    <ul>
+      @foreach (var item in Model)
+      {
+        <li>
+          @Html.ActionLink(@item.title, "ViewDoc", new { id = @item.pk }, new { target = "_blank" })
+        </li>
+      }
+    </ul>
+  </div>
+}
+
+
+
+

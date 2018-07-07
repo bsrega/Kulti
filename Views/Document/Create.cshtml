@@ -1,0 +1,227 @@
+﻿@model Mvc4_Kulti.ViewModels.DocumentCreateViewModel
+
+@{
+  ViewBag.Title = "Dokument erstellen";
+}
+
+<style>
+  #sidebar { display: none; visibility: hidden;}
+</style>
+
+<script type="text/javascript">
+
+  function ChkForm() {
+    var frmOk = true;
+    // get form variables
+    var title = document.getElementById("Doc_Title");
+    var file = document.getElementById("DocFile");
+    var group = document.getElementById("SelectedGroupValue");
+    var ispublic = document.getElementById("Doc_isPublic");
+
+    title.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    file.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    group.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    ispublic.onfocus = function () {
+      this.removeAttribute("style");
+      this.value = "";
+      frmOk = true;
+    };
+
+    //check values
+    if (title.value == '') {
+      title.setAttribute("style", "background-color: yellow;");
+      title.value = "Der Titel muss min. 3 Buchstaben haben";
+      frmOk = false;
+    }
+    
+    if (file.value == '') {
+      file.setAttribute("style", "border: 2px solid yellow;");
+      frmOk = false;
+    }
+
+    if (group.value == "") {
+      group.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    if (ispublic.value == "") {
+      ispublic.setAttribute("style", "background-color: yellow;");
+      frmOk = false;
+    }
+
+    return frmOk;
+  }
+
+  var oGroups = {
+    "9": "B",
+    "8": "Q",
+    "11": "K",
+    "10": "M",
+    "12": "VV",
+    "32": "S",
+    "33": "V"
+  };
+
+  var getProperty = function (propertyName) {
+    return oGroups[propertyName];
+  };
+
+  $(document).ready(function () {
+
+    $("#Doc_PublishDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy'
+    });
+
+    //function to set pre-fix of document-name (if type = protocoll)
+    $("#SelectedTypeValue").change(function () {
+      if ($("#SelectedTypeValue option:selected").text() == "Protokoll") 
+      {
+        if ($("#SelectedGroupValue").val().length > 0) {
+          var value = $("#Doc_Title").val();
+          var dDate = new Date();
+          var nMonth = dDate.getMonth();
+          var nYear = dDate.getFullYear().toString().substr(2, 2);
+          var newvalue = getProperty($("#SelectedGroupValue").val()) + nYear + "-" + (+nMonth + +1) + "_" + value;
+          $("#Doc_Title").val(newvalue);
+          $("#MPr").css({ display: "block" });
+        }
+      }
+      else {
+        $("#MPr").css({ display: "none" });
+      }
+    });
+
+    //make alignment-right possible
+    var ek = $("#mainTbl tr:eq(2)").find("td:first");
+    ek.removeAttr();
+    ek.css("width", "90%");
+
+  });
+
+</script>
+
+<hgroup class="title">
+@*  @ViewBag.Title*@
+</hgroup>
+
+
+@using (Html.BeginForm("Create", "document", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Dokument erstellen</legend>
+    <table>
+      <tr>
+        <td>
+          @Html.Label("Titel")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.Doc.Title)
+          @Html.ValidationMessageFor(model => model.Doc.Title)
+          <div id="MPr" style="display: none; background-color: salmon;">
+            &nbsp;@Html.CheckBox("MailProto") Protokoll versenden
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Dokument ist öffentlich")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.Doc.isPublic)
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          @Html.Label("Falls ja: Ab Datum")
+        </td>
+        <td>
+          @Html.EditorFor(model => model.Doc.PublishDate)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Status")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedStatusValue, Model.Status.ToList())
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Event")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedEventValue, Model.Events.ToList())
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Gruppe")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedGroupValue, Model.Group.ToList())
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Typ")
+        </td>
+        <td>
+          @Html.DropDownListFor(x => x.SelectedTypeValue, Model.Type)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @Html.Label("Dokument")  (.doc, .xls, .ppt, .pdf, .txt)
+        </td>
+        <td>
+          <input type="file" id="DocFile" name="DocFile" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div style="text-align: center; width: 100%;">
+            <input type="submit" value="Erstellen" onclick="return ChkForm();" />
+          </div>
+        </td>
+      </tr>      
+    </table>
+
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Zurück zur Liste", "ListAll")
+</div>
+
+@functions
+{
+
+  private string ss = "" +
+                      "";
+
+}
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryui")
+  @Styles.Render("~/Content/themes/base/css")
+}

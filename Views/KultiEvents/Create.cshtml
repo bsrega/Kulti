@@ -1,0 +1,302 @@
+﻿@model Mvc4_Kulti.ViewModels.EditEventViewModel
+
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+<script src="~/Scripts/ckeditor/config.js"></script>
+<script src="~/Scripts/ckeditor/styles.js"></script>
+<script src="~/Scripts/jquery-ui-timepicker-addon.js"></script>
+<link href="~/Content/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+
+<style type="text/css">
+  #sidebar { display: none; }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    
+    //option value replace
+    $('#SelectedSizeValue option:contains("klein")').text('Parkplätze: 10-20 PW');
+    $('#SelectedSizeValue option:contains("mittel")').text('Parkplätze: 20-40 PW');
+    $('#SelectedSizeValue option:contains("gross")').text('Parkplätze: Ab 40 PW');
+
+    $( "#SelectedTypeValue" ).change(function() {
+      var item = $(this);
+      if (item.val() == 20) {
+        $('#trSize').css('display', 'table-row');
+      } else {
+        $('#trSize').css('display', 'none');
+        document.getElementById('SelectedSizeValue').selectedIndex = 0;
+      }
+    });
+
+    $('#CEvents_EvStartDate').datetimepicker(
+        {
+          dateFormat: 'dd.mm.yy',
+          timeFormat: 'HH:mm',
+          stepHour: 1,
+          stepMinute: 15
+        });
+
+     $('#CEvents_EvEndDate').datetimepicker(
+        {
+          dateFormat: 'dd.mm.yy',
+          timeFormat: 'HH:mm',
+          stepHour: 1,
+          stepMinute: 15
+        });
+
+        CKEDITOR.replace('CEvents_EvText', {
+          height: 250,
+          width: 400,
+          toolbarGroups: [
+		        {"name":"basicstyles","groups":["basicstyles"]},
+		        {"name":"links","groups":["links"]},
+		        {"name":"paragraph","groups":["list","blocks"]},
+		        {"name":"clipboard","groups":["mode"]},
+		        {"name":"document", "groups": ["mode"] },
+		        {"name":"styles","groups":["styles"]}
+	        ],
+
+          // Remove the redundant buttons from toolbar groups defined above.
+          removeButtons: 'Print,NewPage,Save,Templates,Cut,Copy,PasteText,' +
+            'PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,' +
+            'Button,HiddenField,Radio,TextField,Textarea,Select,Subscript,Superscript,' +
+            'RemoveFormat,NumberedList,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,' +
+            'JustifyRight,JustifyBlock,Language,Anchor,Table,HorizontalRule,Smiley,' +
+            'SpecialChar,PageBreak,Iframe,About'
+
+        });
+
+        CKEDITOR.editorConfig = function (config) {
+          config.toolbarGroups = [
+		        { name: 'document', groups: ['mode', 'document', 'doctools'] },
+		        { name: 'clipboard', groups: ['clipboard', 'undo'] },
+		        { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+		        { name: 'forms', groups: ['forms'] },
+		        '/',
+		        { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+		        { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+		        { name: 'links', groups: ['links'] },
+		        { name: 'insert', groups: ['insert'] },
+		        '/',
+		        { name: 'styles', groups: ['styles'] },
+		        { name: 'colors', groups: ['colors'] },
+		        { name: 'tools', groups: ['tools'] },
+		        { name: 'others', groups: ['others'] },
+		        { name: 'about', groups: ['about'] }
+	        ];
+
+          config.removeButtons = 'Print,NewPage,Save,Templates,Cut,Copy,PasteText,' +
+            'PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,' +
+            'Button,HiddenField,Radio,TextField,Textarea,Select,Subscript,Superscript,' +
+            'RemoveFormat,NumberedList,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,' +
+            'JustifyRight,JustifyBlock,Language,Anchor,Table,HorizontalRule,Smiley,' +
+            'SpecialChar,PageBreak,Iframe,About';
+        };
+
+      $("#thisform").validate({
+        rules: {
+          "CEvents.EvTitle": {
+            minlength: 3,
+            required: true
+          },
+          "CEvents.EvStartDate": {
+            required: true
+          },
+          "CEvents.EvEndDate": {
+            required: true
+          },
+          SelectedGroupValue: {
+            required: true
+          },
+          SelectedStatusValue: {
+            required: true
+          },
+          SelectedTypeValue: {
+            required: true
+          },
+          SelectedSizeValue: {
+            required: function (element) {
+              return $("#SelectedTypeValue option:selected").text() == "Veranstaltung";
+            }
+          }
+        },
+        messages: {
+          "CEvents.EvTitle": {
+            required: "Titel eingeben, min. 3 Buchstaben"
+          },
+          "CEvents.EvStartDate": {
+            required: "Startdatum angeben"
+          },
+          "CEvents.EvEndDate": {
+            required: "Enddatum angeben"
+          },
+          SelectedGroupValue: {
+            required: "Gruppe angeben"
+          },
+          SelectedStatusValue: {
+            required: "Status angeben"
+          },
+          SelectedTypeValue: {
+            required: "Typ angeben"
+          },
+          SelectedSizeValue: {
+            required: "Parkplz.-Bedarf angeben"
+          }
+        }
+      });
+
+ });
+ 
+</script>
+
+@{
+  ViewBag.Title = "Event erstellen";
+  HtmlHelper.ClientValidationEnabled = true;
+}
+
+<hgroup class="title">
+  @*@ViewBag.Title*@
+</hgroup>
+
+@using (Html.BeginForm("Create", "KultiEvents", FormMethod.Post, new {enctype = "multipart/form-data", id = "thisform"}))
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Event erstellen</legend>
+    
+    <div style="height: 35em; overflow: auto; padding: 10px;">
+      
+      <table style="width: 100%;">
+        <tr>
+          <td>@Html.Label("Titel")</td>
+          <td>
+            @Html.EditorFor(model => model.CEvents.EvTitle)
+            @Html.ValidationMessageFor(model => model.CEvents.EvTitle)
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Start")</td>
+          <td>
+            @Html.EditorFor(model => model.CEvents.EvStartDate)
+            @Html.ValidationMessageFor(model => model.CEvents.EvStartDate)
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Ende")</td>
+          <td>
+            @Html.EditorFor(model => model.CEvents.EvEndDate)
+            @Html.ValidationMessageFor(model => model.CEvents.EvEndDate)
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Typ")</td>
+          <td>
+            @Html.DropDownListFor(x => x.SelectedTypeValue, Model.Type.ToList())
+            @Html.ValidationMessageFor(model => model.CEvents.EvType)
+          </td>
+        </tr>
+        
+        <tr id="trSize" style="display: none;">
+          <td>@Html.Label("Parkplatzbedarf")</td>
+          <td>
+            @Html.DropDownListFor(x => x.SelectedSizeValue, Model.Size)
+            @Html.ValidationMessageFor(model => model.CEvents.EvSize)
+          </td>
+        </tr>
+
+        <tr>
+          <td>@Html.Label("Event-Text")</td>
+          <td>
+            @Html.TextAreaFor(model => model.CEvents.EvText)
+            @Html.ValidationMessageFor(model => model.CEvents.EvText)
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Bild")</td>
+          <td><input type="file" id="img" name="img" /></td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Eintritt (0 - ??)")</td>
+          <td>
+            @Html.EditorFor(model => model.CEvents.EvAdmission, new {maxlength = "20"})
+            @Html.ValidationMessageFor(model => model.CEvents.EvAdmission)
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Lokalitäten")</td>
+          <td>
+            <div style="height: 60px; overflow: auto; width: 310px;">
+              <table>
+                @if (Model.EventLocations != null)
+                {
+                  foreach (var item in Model.EventLocations)
+                  {
+                    <tr>
+                      <td>@item.Item1</td>
+                      <td>
+                        @if (item.Item3 == false)
+                        { <input type="checkbox" name="lstLoc" value="@item.Item2" /> }
+                        else
+                        { <input type="checkbox" name="lstLoc" value="@item.Item2" checked="checked" /> }                
+                      </td>
+                      <td></td>
+                    </tr>
+                  }
+                }
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Verantwortlicher")</td>
+          <td>
+            @Html.TextAreaFor(model => model.CEvents.EvResponsible, new {cols = 3, @rows = 2, @style = "width: 300px; height: 30px"})
+          </td>
+        </tr>        
+
+        <tr>
+          <td>@Html.Label("Agentur / Veranstalter")</td>
+          <td>
+            @Html.DropDownListFor(x => x.SelectedAgencyValue, Model.Agency.ToList())
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("interne Infos / Götti")</td>
+          <td>
+            @Html.TextAreaFor(model => model.CEvents.EvInterInfo, new {cols = 3, @rows = 2, @style = "width: 300px; height: 30px"})
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            @Html.Label("Gruppe")
+          </td>
+          <td>
+            @Html.DropDownListFor(x => x.SelectedGroupValue, Model.Group.ToList())
+            @Html.ValidationMessageFor(model => model.CEvents.EvGroupId)
+          </td>
+        </tr>
+        <tr>
+          <td>@Html.Label("Status")</td>
+          <td>
+            @Html.DropDownListFor(x => x.SelectedStatusValue, Model.Status.ToList())
+            @Html.ValidationMessageFor(model => model.CEvents.EvStatus)
+          </td>
+        </tr>
+      </table>
+
+    </div> 
+    <hr/>
+    <div style="padding: 0; text-align: center;">
+      <input type="submit" value="Erstellen" id="btnSave" />  
+    </div>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Zurück zur Liste", "Index")
+</div>

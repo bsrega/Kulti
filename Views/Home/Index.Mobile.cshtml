@@ -1,0 +1,26 @@
+﻿@{
+  ViewBag.Title = "Kulturfabrik Mobile Page";
+}
+@section featured {
+ 
+  <article data-role="collapsible">
+    <h4>Nächste Veranstaltungen</h4>
+    @Html.Action("ListEvents", "KultiEvents")
+  </article>
+
+  <article data-role="collapsible">
+    <h4>Neueste Meldungen</h4>
+    @Html.Action("ListBlogs", "Blog")
+  </article>
+
+  <article data-role="collapsible"> 
+    <h4>Termine</h4>
+    @Html.Action("EventsMeetingsCal", "KultiEvents")
+  </article>
+
+  <article data-role="collapsible" id="ss"> 
+    <h4>Dokumente</h4>
+    @Html.Action("ListPublishedDocs", "Document")
+  </article>
+
+}

@@ -1,0 +1,40 @@
+﻿@model Mvc4_Kulti.Models.LocalPasswordModel
+
+
+<fieldset>
+  <legend>Mein Konto</legend>
+  <p></p>
+  <p class="message-success">@ViewBag.StatusMessage</p>
+  <table style="width: 100%;">
+    <tr>
+      <td>Du bist eingelogged als <strong>@User.Identity.Name</strong>.</td>
+      <td>
+        <strong>Meine Rollen</strong>
+        <ul>
+          @foreach (string sRole in ViewBag.Roles)
+          {
+            <li>@sRole</li> 
+          }
+        </ul>
+      </td>
+      <td>@Html.ActionLink("Email ändern", "ManageEmail", "Account")</td>
+      <td>@Html.ActionLink("Neues Mitglied registrieren", "Register", "Account")</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="padding: 10px">
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        { 
+            @Html.Partial("_SetPasswordPartial")
+        }
+      </td>
+    </tr>
+  </table>
+</fieldset>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

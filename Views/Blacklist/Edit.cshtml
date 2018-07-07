@@ -1,0 +1,104 @@
+﻿@model Mvc4_Kulti.Blacklist
+
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    $("#FromDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy'
+    });
+
+    $("#ToDate").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy'
+    });
+
+    //remove validation of datepicker
+    $("#thisFrm").validate();
+    $("[type=date]").datepicker({
+      onClose: function () {
+        $(this).valid();
+      }
+    });
+
+  });
+
+</script>
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "thisFrm" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Blacklist Editieren</legend>
+
+        @Html.HiddenFor(model => model.BlacklistID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reason)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reason)
+            @Html.ValidationMessageFor(model => model.Reason)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FromDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FromDate)
+            @Html.ValidationMessageFor(model => model.FromDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToDate)
+            @Html.ValidationMessageFor(model => model.ToDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+  @Scripts.Render("~/bundles/jqueryui")
+  @Styles.Render("~/Content/themes/base/css")
+}

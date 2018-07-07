@@ -1,0 +1,37 @@
+﻿@{
+  ViewBag.Title = "Über die Kulturfabrik";
+}
+
+<article>
+  <fieldset>
+    <legend>@ViewBag.Message</legend>
+    <h4>Unser Leitbild</h4>
+    Die Kulturfabrik ist eine ehemalige Giesserei, die heute einen Platz für kulturelle Begegnungen und kulturelles Schaffen darstellt.
+    <br />
+    Die Kultur - einerseits verstanden als darstellende und bildende Künste, zum anderen als menschliche Bedürfnisse wie Wohnen, Arbeiten und einander begegnen - soll als verbindendes Element die verschiedenen Teile der Kulturfabrik zusammenhalten.
+    <br />
+    Sowohl der öffentliche, wie auch der private Teil der Kulturfabrik, die Mieter, das Gewerbe und die Vereine haben das gemeinsame Ziel, Kultur zu schaffen, anzubieten und Raum für Kulturschaffende zur Verfügung zu stellen. Willkommen sind alle Menschen, die auf verschiedenste Weise am Geschehen der Kulturfabrik teilhaben möchten und unsere Grundsätze und Regeln respektieren.
+    <br />
+    Die Besitzerin der Kulturfabrik ist die Stiftung. Mieter ist der Trägerschaftsverein, die Vereinigung aller MieterInnen. Dieser Verein verwaltet die Fabrik auf Basis von ehrenamtlicher Mitarbeit weitestgehend selbst. Es wird vorausgesetzt, dass alle Mitglieder gemeinsam die richtungweisenden Entscheide erarbeiten und tragen. Dabei sollen die Grundwerte Gemeinschaft, Gleichberechtigung, gegenseitiger Respekt und Nachhaltigkeit wegweisend sein.
+    <br />
+    Um die konkrete Umsetzung von Beschlüssen zu gewährleisten, wählt der Trägerschaftsverein eine Verwaltung und erteilt dieser die benötigten Kompetenzen, um die ihr übertragenen Aufgaben selbständig zu erledigen. Die betriebswirtschaftlichen Ziele der Kulturfabrik sind das Erhalten der Liegenschaft und die Ermöglichung eines selbsttragenden Betriebs. Der dadurch bedingte Investitionsbedarf soll nebst den Mieteinnahmen durch Eigenleistung erwirtschaftet werden.
+    <br />
+    Die Kulturfabrik versteht sich eingebettet ins nähere und weitere Umfeld und möchte einen konstruktiven Beitrag zum kulturellen Leben leisten.
+   </fieldset>
+</article>
+
+@section featured {
+  <section class="featured">
+    <h3>Der Verein TräVe</h3>
+    <h4>Trägerschaft der Kulturfabrik</h4>
+    Die Räume stehen für kulturelles, soziales und gewerbliches Wirken zur Verfügung, Gemeinschaftliche Selbstverwaltung, nicht gewinnorientiert, kostendeckende Arbeit, günstige Mietkonditionen für kulturell und öffentlich genutzte Räume, Erhalt des Kultur- und Begegnungszentrums Kulturfabrik. etc.
+    <br />
+    <h3>Info</h3>
+    Fragen?
+    <br />
+    Stelle sie uns @Html.ActionLink("hier", "Contact", "Home")
+    <br/>
+    Wie helfen dir gerne weiter!
+    <br/>
+  </section>
+}

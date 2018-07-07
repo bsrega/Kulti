@@ -1,0 +1,47 @@
+﻿<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+@model Mvc4_Kulti.ViewModels.DocumentSingleViewModel
+
+<fieldset>
+    <legend>Dokument-Detail</legend>
+  <table style="width: 100%">
+    <tr>
+      <td>Titel</td>
+      <td>@Html.DisplayFor(model => model.Doc.Title)</td>
+    </tr>
+    <tr>
+      <td>Erstell-Datum</td>
+      <td>@Html.DisplayFor(model => model.Doc.CreateDate)</td>
+    </tr>
+    <tr>
+      <td>Publikations-Datum</td>
+      <td>@Html.DisplayFor(model => model.Doc.PublishDate)</td>
+    </tr>
+    <tr>
+      <td>Ersteller</td>
+      <td>@Html.DisplayFor(model => model.UserName)</td>
+    </tr>
+    <tr>
+      <td>Gehört zu Event</td>
+      <td>@Html.DisplayFor(model => model.EventType)</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>@Html.DisplayFor(model => model.Status)</td>
+    </tr>
+    <tr>
+      <td>Typ</td>
+      <td>@Html.DisplayFor(model => model.DocType)</td>
+    </tr>
+    <tr>
+      <td>Pfad zur Datei (intern)</td>
+      <td> @Html.DisplayFor(model => model.Doc.FilePath)</td>
+    </tr>
+  </table>
+</fieldset>
+<p>
+  <input type="button" value="Zurück" onclick="history.back();"/>
+</p>

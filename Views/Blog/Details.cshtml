@@ -1,0 +1,46 @@
+﻿@model Mvc4_Kulti.Blog
+
+@{
+    ViewBag.Title = "Blog-Details";
+}
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<hgroup class="title">
+    <h3>@ViewBag.Message</h3>
+</hgroup>
+
+<fieldset>
+  <legend>News-Details</legend>
+  
+  <table style="width: 100%">
+    <tr>
+      <td><strong>Ersteller</strong></td>
+      <td>@ViewBag.UserName</td>
+    </tr>
+    <tr>
+      <td><strong>Datum</strong></td>
+      <td>@Html.DisplayFor(model => model.Date)</td>
+    </tr>
+    <tr>
+      <td><strong>Titel</strong></td>
+      <td>@Html.DisplayFor(model => model.Title)</td>
+    </tr>
+    <tr>
+      <td><strong>Nachricht</strong></td>
+      <td>
+        <div style="height: 150px; overflow: auto;">
+          @Html.Raw(Model.BlogText)
+        </div>
+        <br/>
+      </td>
+    </tr>                
+  </table>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Zurück zur Liste", "Index")
+</p>

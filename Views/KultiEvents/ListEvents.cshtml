@@ -1,0 +1,148 @@
+﻿@using Mvc4_Kulti.ViewModels
+@model IEnumerable<Mvc4_Kulti.ViewModels.ExtEvent>
+
+<!-- Add fancyBox -->
+<link href="../../Scripts/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Scripts/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- fancyBox Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet" href="../../Scripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../../Scripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../../Scripts/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet" href="../../Scripts/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="../../Scripts/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    $(".fancybox").fancybox(
+      {
+        fitToView: false,
+        autoSize: false,
+        afterLoad: function () {
+          var newWidth = this.width * 1.5;
+          var newHeight = this.height * 1.5;
+          this.width = newWidth;
+          this.height = newHeight;
+        }
+      }
+    );
+
+    $("#tblEvents a").attr('target', '_blank');
+    
+  });
+</script>
+
+<style>
+  .wrap {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slide {
+  box-shadow: 2px 2px 2px #888888;  
+  padding-left: 5px;
+  padding-bottom: 5px;
+  background-color: whitesmoke;
+}
+
+.read-more {
+    color:#333;
+    padding:5px;
+}
+
+.read-more a {
+    padding-right:22px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.read-more a:hover {
+    color:#000;
+}
+
+.imgwrap {
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: auto; 
+  width: 80%;
+}
+
+</style>
+  
+  <table style="width:100%;table-layout:fixed;" id="tblEvents">
+    <thead></thead>
+    <tfoot>
+      @foreach (ExtEvent item in Model)
+      {
+        <tr>
+          <td style="vertical-align:top;width:20%;">
+            @Html.Raw(FromTo(item.EvStartDate ?? DateTime.MinValue, item.EvEndDate ?? DateTime.MinValue))
+            <br/>
+            @if (item.EvAdmission != null)
+            {
+              <div>
+                @Html.DisplayFor(modelItem => item.EvAdmission)
+              </div>
+            }
+             <ul>
+                @foreach (var iLoc in item.EventLocations)
+                {
+                  if (iLoc.Item3 == true)
+                  { <li>@iLoc.Item1</li> }
+                }
+              </ul>
+          </td>
+          <td style="vertical-align:top;width:70%;">
+            <div class="slide">
+              <div class="wrap">
+                <div class="title" style="padding-bottom:5px;">@Html.DisplayFor(modelItem => item.EvTitle)</div>
+                @if (item.EvImgPath1 != null)
+                {
+                  <a class="fancybox" href="@ImgFile(item.EvImgPath1)" style="float:left;padding:0;margin:0;">
+                    <img src="@ImgFile(item.EvImgPath1)" class="imgwrap" alt="Event-Img" />
+                  </a>
+                }
+                @Html.Raw(item.EvText)    
+              </div>
+              <div class="read-more"></div>
+            </div>
+          </td>
+        </tr>
+      }
+    </tfoot>
+  </table>
+
+
+
+@functions{
+
+  public string ImgFile(string path)
+  {
+    try
+    {
+      string filename = path.Split('\\').Last();
+      return "../Images/Events/" + filename;
+    }
+    catch
+    {
+      return "";
+    }
+  }
+
+
+  public string FromTo(DateTime fromDate, DateTime toDate)
+  {
+    if (fromDate.DayOfWeek == toDate.DayOfWeek)
+    {
+      return ("<strong>" + fromDate.ToString("dddd") + "</strong> " + fromDate.ToString("dd/MM")
+        + "<br/>" + fromDate.ToString("HH:mm") + " - " + toDate.ToString("HH:mm"));
+    }
+
+    return ("<strong>" +
+      fromDate.ToString("dddd") + "</strong> " + fromDate.ToString("dd/MM") + " " + fromDate.ToString("HH:mm") + " -<br/>" + toDate.ToString("dddd HH:mm")
+      );
+  }
+
+}

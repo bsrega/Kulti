@@ -1,0 +1,84 @@
+﻿@using Mvc4_Kulti.ViewModels
+@model IEnumerable<Mvc4_Kulti.ViewModels.ExtEvent>
+
+<script type="text/javascript">
+		function init() {
+		var imgDefer = document.getElementsByTagName('img');
+		for (var i=0; i<imgDefer.length; i++) {
+				if(imgDefer[i].getAttribute('data-src')) {
+					imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+				} 
+		 }
+	}
+		window.onload = init;
+</script>
+
+<div style="height: 35em; overflow: scroll; padding: 10px;">
+  
+  @foreach (ExtEvent item in Model)
+  {
+    <div data-role="collapsible">
+      <h3>
+        @Html.DisplayFor(modelItem => item.EvTitle) <br/> @Html.Raw(FromTo(item.EvStartDate ?? DateTime.MinValue, item.EvEndDate ?? DateTime.MinValue))
+      </h3>
+      <div>
+        @if (item.EvImgPath1 != null)
+        {
+							   <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="@ImgFile(item.EvImgPath1)">
+										@*<img src="@ImgFile(item.EvImgPath1)" alt="EventImg" style="height: auto; width: 100%;" />*@  
+        }
+      </div>
+      <div>
+        @Html.Raw(FromTo(item.EvStartDate ?? DateTime.MinValue, item.EvEndDate ?? DateTime.MinValue))
+        <br/>
+        @Html.DisplayFor(modelItem => item.EvAdmission)
+        <ul>
+          @foreach (var iLoc in item.EventLocations)
+          {
+            if (iLoc.Item3)
+            {
+              <li>@iLoc.Item1</li>
+            }
+          }
+        </ul>
+      </div>
+      <div>
+        @Html.Raw(item.EvText) 
+      </div>
+
+    </div>
+  }
+  
+</div>
+
+
+@functions{
+
+  public string ImgFile(string path)
+  {
+    try
+    {
+      string filename = path.Split('\\').Last();
+      return "../Images/Events/" + filename;
+    }
+    catch
+    {
+      return "";
+    }
+  }
+
+
+  public string FromTo(DateTime fromDate, DateTime toDate)
+  {
+    if (fromDate.DayOfWeek == toDate.DayOfWeek)
+    {
+      return ("<strong>" + fromDate.ToString("dddd") + "</strong > " + "<br/>" + fromDate.ToString("dd/MM")
+              + "<br/>" + fromDate.ToString("HH:mm") + " - " + toDate.ToString("HH:mm"));
+    }
+
+    return (
+             fromDate.ToString("dddd") + " " + fromDate.ToString("dd/MM") + " " + fromDate.ToString("HH:mm") + " -<br/>" + toDate.ToString("dddd HH:mm")
+           );
+  }
+
+}

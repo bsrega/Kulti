@@ -1,0 +1,92 @@
+﻿@model Mvc4_Kulti.Blog
+
+<link href="../../Content/jquery.cleditor.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Scripts/jquery.cleditor.min.js"> </script>
+
+<style type="text/css">
+  input#BlogText { display: none; }
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    //element holding editor
+    $("#inputTxt").cleditor({
+      useCSS: false,
+      width: 308,
+      controls:
+      // controls to add to the toolbar                        
+        "bold italic underline strikethrough subscript superscript | font size " +
+          "style | color highlight removeformat | bullets numbering | outdent " +
+          "indent | alignleft center alignright justify | undo redo | link"
+    });
+
+
+    //input field of model
+    var evTextFld = document.getElementById("BlogText");
+
+    //get value of editor
+    var cledit = $("#inputTxt").cleditor()[0];
+    $(cledit.$frame[0]).attr("id", "cleditCool");
+
+    //input field of editor
+    var cleditFrame;
+    if (!document.frames) {
+      cleditFrame = $("#cleditCool")[0].contentWindow.document;
+    } else {
+      cleditFrame = document.frames["cleditCool"].document;
+    }
+
+    //paste value to input-field of model
+    $("#btnSave").bind("click", function () {
+      var v = $(cleditFrame).find("body").html();
+      evTextFld.value = v;
+    });
+
+  });
+
+</script>
+
+
+<hgroup class="title">
+    <h3>@ViewBag.Message</h3>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+      <legend>Neue News-Meldung</legend>
+
+        <div class="editor-label">
+            @Html.Label("Titel")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Text")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BlogText)
+            @Html.ValidationMessageFor(model => model.BlogText)
+            <textarea id="inputTxt" name="inputTxt"></textarea>
+        </div>
+        <p>
+            <input type="submit" value="Veröffentlichen" id="btnSave" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Zurück zur Liste", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

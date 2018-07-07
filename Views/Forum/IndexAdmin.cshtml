@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Mvc4_Kulti.Forum>
+
+@{
+  ViewBag.Title = "Index";
+}
+
+<link href="../../Content/jquery.treeview.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery.treeview.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    var par = $("#frmPostNew");
+
+    $(".ForumPost").click(function () {
+      $("#rsvpmsg").show();
+      $(par).hide();
+      var id = this.id;
+      $.ajax({
+        url: "/Forum/PartialViewAdmin",
+        data: { data: id },
+        success: function (mydata) {
+          $("#rsvpmsg").empty().append(mydata);
+        },
+        type: "GET"
+      });
+      return false;
+    });
+
+    $(par).hide();
+
+    // toggles the slickbox
+    $("#toggleFrm").click(function () {
+      var par2 = $("#rsvpmsg");
+      $(par2).hide();
+      $(par).toggle(400);
+    });
+
+  });
+
+  
+</script>
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+  div.ForumPost a:hover { color:#0000ff; }
+  div.ForumPost { cursor: pointer; }
+</style>
+
+<table style="width: 100%; padding-bottom: 5px; margin-bottom: 10px; border-bottom: 1px solid black;">
+  <tr>
+    <td><div class="title">Forum</div></td>
+    <td><span style="cursor: pointer; font-weight: bold;" id="toggleFrm">Neues Thema schreiben</span></td>
+  </tr>
+</table>
+
+
+  <table style="width: 100%;">
+    <tr>
+      <td>
+      <div id="trv" style="height: 300px; overflow: auto;">
+        @ForumPosts(Model, null)
+      </div>
+    </td>
+      <td>
+        <div id="rsvpmsg"></div>
+      </td>
+  </tr>
+</table>
+
+
+@helper ForumPosts(IEnumerable<Mvc4_Kulti.Forum> nodes, int? parentId)
+  {
+  if (nodes.Any(n => n.ParentId == parentId))
+  { 
+    <ul id="tree_root" class="ForumPost">
+      @foreach (var node in nodes.Where(n => n.ParentId == parentId))
+      {
+        <li>
+          <div id="@node.ForumId" class="ForumPost">
+            <a>
+              @getTitle(node.Title)
+              @*@node.Title.Substring(0, 10)*@
+            </a>
+            @if (@node.PostDate > @DateTime.Now.AddDays(-1.5))
+            { <span style="color: red; font-weight: bold; font-size: 0.8em;">&nbsp;&nbsp;(neu)</span> } 
+            @ForumPosts(nodes, node.ForumId)  
+          </div>
+        </li>
+      }
+    </ul>
+  }
+} 
+
+@functions
+{
+  public string getTitle(string sTitle)
+  {
+    if (sTitle.Length > 25)
+    {
+      return sTitle.Substring(0, 24) + "..";
+    }
+    else
+    {
+      return sTitle;
+    }
+  }
+}
+
+
+
+

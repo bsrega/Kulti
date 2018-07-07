@@ -1,0 +1,23 @@
+﻿@model HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<hgroup class="title">
+  <br/>
+  <h2 class="error">Ein Fehler ist aufgetreten</h2>
+  <br/>
+</hgroup>
+<div style="font-size: 12pt;">@ViewBag.Msg</div>
+
+
+<div style="font-size: 12pt;"></div>
+
+<br/>
+
+ <ul>
+    <li>
+       <a href="javascript:history.back(-2)">zurück</a>
+    </li>    
+  </ul>

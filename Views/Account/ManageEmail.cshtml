@@ -1,0 +1,39 @@
+﻿@model Mvc4_Kulti.Models.LocalEmailModel
+
+<fieldset>
+  <legend>Email Adresse</legend>
+  @ViewBag.StatusMessage
+  <table style="width: 100%;">
+    <tr>
+      <td>Dein jetziges Email ist <strong>@ViewBag.OldEmail</strong></td>
+      <td>@Html.ActionLink("zurück", "Manage", "Account")</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding: 5px;">
+        @using (Html.BeginForm("ManageEmail", "Account"))
+        {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary()
+
+          <fieldset>
+            <legend>Email ändern</legend>
+            <ol>
+              <li>
+                @Html.Label("Neues Email")
+                @Html.TextBoxFor(m => m.NewEmail)
+                @Html.ValidationMessageFor(m => m.NewEmail)
+              </li>
+            </ol>
+            <input type="submit" value="Speichern" />
+          </fieldset>
+        }
+      </td>
+    </tr>
+  </table>
+  
+</fieldset>

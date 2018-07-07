@@ -1,0 +1,71 @@
+﻿@model Mvc4_Kulti.Blacklist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<script>
+  window.onload = function () {
+    var w = document.getElementById("img1");
+    if (w.complete == false) {
+      w.style.visibility = "hidden";
+      document.getElementById("noImg").style.visibility = "visible";
+    }
+  }
+</script>
+
+<style>
+  #sidebar { display: none; }
+  #content { width: 90%; }
+</style>
+
+<fieldset>
+  <legend>Blacklist-Eintrag</legend>
+  
+  <div style="float: left; padding-right: 60px;">
+    <table>
+      <tr>
+        <td>Vorname</td>
+        <td>@Html.DisplayFor(model => model.FirstName)</td>
+      </tr>
+      <tr>
+        <td>Nachname</td>
+        <td>@Html.DisplayFor(model => model.LastName)</td>
+      </tr>
+      <tr>
+        <td>Grund</td>
+        <td>@Html.DisplayFor(model => model.Reason)</td>
+      </tr>
+      <tr>
+        <td>ab Datum</td>
+        <td>@Html.DisplayFor(model => model.FromDate)</td>
+      </tr>
+      <tr>
+        <td>bis Datum</td>
+        <td>@Html.DisplayFor(model => model.ToDate)</td>
+      </tr>
+    </table>
+    
+  </div>
+
+  <div style="float: left;">
+    <div id="noImg" style="visibility:hidden">
+      kein Bild vorhanden
+    </div>
+    @Html.Raw(ImgFile(Model.BlacklistID))  
+  </div>
+
+</fieldset>
+<p>
+  @Html.ActionLink("Edit", "Edit", new { id=Model.BlacklistID }) |
+  @Html.ActionLink("Zurück zur Liste", "List")
+</p>
+
+@functions
+{
+  public string ImgFile(int path)
+  {
+      return "<img id='img1' src='/Images/Blacklist/" + path.ToString() + ".jpg'  />";   
+  }
+}
+

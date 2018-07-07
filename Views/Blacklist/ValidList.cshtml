@@ -1,0 +1,61 @@
+﻿@using Mvc4_Kulti
+@model IEnumerable<Mvc4_Kulti.Blacklist>
+@{
+  ViewBag.Title = "Blacklist";
+}
+
+<script>
+  $(document).ready(function () {
+    $("#tblBlk tr:even").css("background-color", "silver");
+  });
+</script>
+
+<style type="text/css">
+  #sidebar { display: none; }
+</style>
+
+<fieldset>
+  <legend>Blacklist</legend>
+  Diese Liste ist nur gültig am: <span style="font-weight: bold;">@DateTime.Now.ToShortDateString()</span> 
+  <br/>
+  <br/>
+  @if (Model.Any())
+  {
+    <table id="tblBlk" style="width: 100%; border-collapse: collapse;">
+      @foreach (Blacklist item in Model)
+      {
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.FirstName) 
+            @Html.DisplayFor(modelItem => item.LastName)
+          </td>
+          <td>
+            @Html.Raw(ImgFile(item.BlacklistID)) 
+            @Html.DisplayFor(modelItem => item.Reason)
+          </td>
+        </tr>
+      }
+    </table>
+  }
+  else
+  {
+    <div>
+      keine aktuelle Personen vorhanden
+    </div>
+  }
+</fieldset>
+
+@functions
+{
+  public string ImgFile(int path)
+  {
+      try
+      {
+          return "<img src='/Images/Blacklist/" + path.ToString() + ".jpg' alt='img' />";
+      }
+      catch
+      {
+          return "";
+      }
+  }
+}

@@ -1,0 +1,137 @@
+﻿
+<script src="../../Scripts/jquery.validate.js" type="text/javascript"></script>
+
+@{
+  ViewBag.Title = "ResetPasswort";
+}
+
+
+  <script type="text/javascript">
+
+    $.validator.setDefaults({
+      submitHandler: function () {
+        $("#fSubmit").submit();
+      }
+    });
+
+    $().ready(function () {
+
+      //$('#email').replaceWith('<input type="email" id="email" />');
+      //$('#email').replaceWith('<span>ddd</span>');
+
+      // validate the comment form when it is submitted
+      //$("#fSubmit").validate();
+
+      // validate signup form on keyup and submit
+      $("#fSubmit").validate({
+        
+        rules: {
+          username: {
+            required: true,
+            minlength: 3
+          },
+          email: {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          username: {
+            required: "Dein Username angeben",
+            minlength: "Dein Username hat min. 3 Buchstaben"
+          },
+          email: "Gültiges Email angeben"
+        }
+
+
+      }
+      
+      );
+
+
+      //code to hide topic selection, disable for demo
+      //var newsletter = $("#newsletter");
+      // newsletter topics are optional, hide at first
+      //var inital = newsletter.is(":checked");
+      //var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
+      //var topicInputs = topics.find("input").attr("disabled", !inital);
+      // show when newsletter is checked
+      //      newsletter.click(function () {
+      //        topics[this.checked ? "removeClass" : "addClass"]("gray");
+      //        topicInputs.attr("disabled", !this.checked);
+      //      });
+    });
+</script>
+
+
+<style type="text/css">
+  #commentForm { width: 500px; }
+  #commentForm label { width: 250px; }
+  #commentForm label.error, #commentForm input.submit { margin-left: 253px; }
+  #signupForm { width: 670px; }
+  #signupForm label.error {
+    margin-left: 10px;
+    width: auto;
+    display: inline;
+  }
+  #newsletter_topics label.error {
+    display: none;
+    margin-left: 103px;
+  }
+</style>
+
+
+@if (ViewBag.Confirm == "ok")
+{
+   <fieldset>
+      <legend>Passwort wurde versendet</legend>
+      <div style="padding: 20px">
+        Das neue Passwort wurde dir zugeschickt.
+      </div>
+    </fieldset>
+}
+
+
+@if (ViewBag.Confirm == "false")
+{
+   <fieldset>
+      <legend>Fehler beim Passwort versenden</legend>
+      <div style="padding: 20px">
+        Leider ist ein Fehler aufgetreten..
+      </div>
+    </fieldset>
+}
+
+
+@if (ViewBag.Confirm == "frm")
+{
+  using (Html.BeginForm(null, null, FormMethod.Post, new { id = "fSubmit" }))
+  {
+      @Html.ValidationSummary(true)
+      @Html.AntiForgeryToken()
+      <fieldset>
+        <legend>Passwort vergessen</legend>
+        <table>
+          <tr>
+            <td>Dein Username</td>
+            <td>@Html.TextBox("username")</td>
+          </tr>
+          <tr>
+            <td>Dein Email</td>
+            <td>@Html.TextBox("email")</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div style="text-align: center; border-top: 1px solid black; padding-top: 5px;">
+                <button type="submit">Passwort senden</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+  }
+}
+
+
+
+
